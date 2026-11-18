@@ -1,0 +1,77 @@
+{
+	"fetchedAt": "2026-11-18T22:32:57.522Z",
+	"data": {
+		"user": {
+			"name": "GaryFlipsTables",
+			"siteUrl": "https://anilist.co/user/5777076",
+			"statistics": {
+				"anime": {
+					"count": 152,
+					"episodesWatched": 2989,
+					"minutesWatched": 69786,
+					"meanScore": 64.93
+				}
+			}
+		},
+		"recent": [
+			{
+				"status": "COMPLETED",
+				"progress": 16,
+				"updatedAt": 1767136462,
+				"media": {
+					"title": {
+						"romaji": "Re:Zero kara Hajimeru Isekai Seikatsu 3rd Season",
+						"english": "Re:ZERO -Starting Life in Another World- Season 3"
+					},
+					"episodes": 16,
+					"siteUrl": "https://anilist.co/anime/163134"
+				}
+			},
+			{
+				"status": "COMPLETED",
+				"progress": 24,
+				"updatedAt": 1767136407,
+				"media": {
+					"title": {
+						"romaji": "Blue Lock",
+						"english": "BLUE LOCK"
+					},
+					"episodes": 24,
+					"siteUrl": "https://anilist.co/anime/137822"
+				}
+			},
+			{
+				"status": "COMPLETED",
+				"progress": 26,
+				"updatedAt": 1767136157,
+				"media": {
+					"title": {
+						"romaji": "Shin Seiki Evangelion",
+						"english": "Neon Genesis Evangelion"
+					},
+					"episodes": 26,
+					"siteUrl": "https://anilist.co/anime/30"
+				}
+			}
+		],
+		"manga": {
+			"series": 1,
+			"chaptersRead": 1170,
+			"recent": [
+				{
+					"status": "CURRENT",
+					"progress": 1170,
+					"updatedAt": 1767136228,
+					"media": {
+						"title": {
+							"romaji": "ONE PIECE",
+							"english": "One Piece"
+						},
+						"chapters": null,
+						"siteUrl": "https://anilist.co/manga/30013"
+					}
+				}
+			]
+		}
+	}
+}

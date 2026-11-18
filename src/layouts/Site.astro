@@ -1,0 +1,50 @@
+---
+import { Font } from 'astro:assets';
+import '../styles/site.css';
+import DevThemeSelector from '../components/DevThemeSelector.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import { DEFAULT_THEME, STORAGE_KEY, THEMES } from '../themes';
+import { url } from '../consts';
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = 'Personal website' } = Astro.props;
+const themeIds = Object.keys(THEMES);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<link rel="icon" type="image/svg+xml" href={url('/favicon.svg')} />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<Font cssVariable="--font-atkinson" preload />
+
+		<!-- Runs before first paint so the page never flashes the wrong theme. -->
+		<script is:inline define:vars={{ STORAGE_KEY, DEFAULT_THEME, themeIds }}>
+			let id = null;
+			try {
+				id = localStorage.getItem(STORAGE_KEY);
+			} catch {}
+			if (!themeIds.includes(id)) {
+				id = matchMedia('(prefers-color-scheme: dark)').matches ? DEFAULT_THEME.dark : DEFAULT_THEME.light;
+			}
+			document.documentElement.dataset.theme = id;
+		</script>
+	</head>
+	<body>
+		<SiteHeader />
+		<slot />
+		{import.meta.env.DEV && <DevThemeSelector />}
+
+		<script>
+			import { watchOsTheme } from '../themes';
+			watchOsTheme();
+		</script>
+	</body>
+</html>

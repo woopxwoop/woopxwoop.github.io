@@ -1,59 +1,84 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import Site from '../layouts/Site.astro';
+import { SITE_NAME } from '../consts';
+import StatusTicker from '../components/StatusTicker.astro';
+import { getAniList } from '../data/anilist';
+import { getRenshuu } from '../data/renshuu';
+import { anilistStatus, renshuuStatus } from '../data/status';
+
+// Runs at build time, sources in parallel. If any fails, the build fails (see src/data/source.ts).
+const [anilist, renshuu] = await Promise.all([getAniList(), getRenshuu()]);
+const status = [...anilistStatus(anilist), ...renshuuStatus(renshuu)];
+
+const socials = [
+	{ label: 'github', href: '#' },
+	{ label: 'email', href: '#' },
+];
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to
-				build a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your{' '}
-				<code>astro.config.mjs</code> file. You can customize your setup with{' '}
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like
-				Tailwind, React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>
-					Edit this page in <code>src/pages/index.astro</code>
-				</li>
-				<li>
-					Edit the site header items in <code>src/components/Header.astro</code>
-				</li>
-				<li>
-					Add your name to the footer in <code>src/components/Footer.astro</code>
-				</li>
-				<li>
-					Check out the included blog posts in <code>src/content/blog/</code>
-				</li>
-				<li>
-					Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code>
-				</li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to{' '}
-				<a href="https://docs.astro.build/">read the docs</a> or{' '}
-				<a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out{' '}
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a> by{' '}
-				<a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<Site title={SITE_NAME}>
+	<main>
+		<h1>{SITE_NAME}</h1>
+		<p class="intro">
+			third year student at the University of Wisconsin-Madison studying Computer Science and Engineering.
+		</p>
+		<ul class="socials">
+			{socials.map(({ label, href }) => <li><a href={href}>{label}</a></li>)}
+		</ul>
+		<div class="status">
+			<StatusTicker items={status} />
+		</div>
+	</main>
+</Site>
+
+<style>
+	main {
+		/* Fill the space under the header and center the content in it,
+		   nudged slightly above true center (looks more balanced). */
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-height: calc(100svh - 4.5rem);
+		max-width: 38rem;
+		margin: 0 auto;
+		padding: 2rem 1.5rem 12vh;
+	}
+
+	h1 {
+		margin: 0 0 0.4em;
+		font-size: clamp(2.6rem, 8vw, 4rem);
+		line-height: 1.05;
+		letter-spacing: -0.02em;
+	}
+
+	.intro {
+		margin: 0 0 1.75rem;
+		color: var(--muted);
+	}
+
+	.socials {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		font-size: 0.95rem;
+	}
+	/* "github · linkedin · email" — dots are decoration, not part of the link text */
+	.socials li + li::before {
+		content: '·';
+		margin: 0 0.6em;
+		color: var(--muted);
+	}
+	.socials a {
+		color: var(--muted);
+		text-decoration: none;
+	}
+	.socials a:hover {
+		color: var(--accent);
+	}
+
+	.status {
+		margin-top: 2.25rem;
+	}
+</style>

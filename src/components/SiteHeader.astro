@@ -1,0 +1,74 @@
+---
+import { NAV_LINKS, SITE_NAME, stripBase, url } from '../consts';
+
+const path = stripBase(Astro.url.pathname).replace(/(.)\/$/, '$1');
+const isActive = (href: string) => path === href || path.startsWith(href + '/');
+---
+
+<header>
+	<nav aria-label="Main">
+		<a href={url('/')} class="home" aria-label={`${SITE_NAME}, home`} aria-current={path === '/' ? 'page' : undefined}>me</a>
+		<ul>
+			{
+				NAV_LINKS.map(({ href, label }) => (
+					<li>
+						<a href={url(href)} aria-current={isActive(href) ? 'page' : undefined}>
+							{label}
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</nav>
+</header>
+
+<style>
+	nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		max-width: 38rem;
+		margin: 0 auto;
+		padding: 1.5rem 1.5rem 0;
+		font-size: 0.95rem;
+	}
+
+	ul {
+		display: flex;
+		gap: 1.5rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	a {
+		color: var(--muted);
+		text-decoration: none;
+	}
+	a:hover {
+		color: var(--text);
+	}
+
+	.home {
+		color: var(--text);
+		font-weight: 700;
+		letter-spacing: -0.01em;
+	}
+
+	/* Current page: full text color plus a small accent dot underneath. */
+	ul a[aria-current='page'] {
+		position: relative;
+		color: var(--text);
+	}
+	ul a[aria-current='page']::after {
+		content: '';
+		position: absolute;
+		left: 50%;
+		bottom: -0.45em;
+		width: 4px;
+		height: 4px;
+		border-radius: 50%;
+		background: var(--accent);
+		transform: translateX(-50%);
+	}
+</style>

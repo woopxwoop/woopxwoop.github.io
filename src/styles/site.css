@@ -1,0 +1,73 @@
+/* ---------- Theme tokens ---------- */
+/* Base is neutral (light or dark). Each theme adds ONE accent, used sparingly. */
+
+:root,
+[data-theme='chandelure'] {
+	color-scheme: dark;
+	--bg: #111113;
+	--surface: #18181b;
+	--text: #e7e7ea;
+	--muted: #8d8d95;
+	--line: rgba(255, 255, 255, 0.1);
+	--accent: #a98bf5; /* soft violet */
+}
+
+[data-theme='kazuha'] {
+	color-scheme: light;
+	--bg: #fafaf8;
+	--surface: #ffffff;
+	--text: #1d1d1f;
+	--muted: #6e6e73;
+	--line: rgba(0, 0, 0, 0.1);
+	--accent: #b4422f; /* muted maple red */
+}
+
+/* Optional slots (themes may override later):
+   --divider : background for <hr> ornaments                    */
+
+/* ---------- Base ---------- */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	background: var(--bg);
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	background: var(--bg);
+	color: var(--text);
+	font-family: var(--font-atkinson), system-ui, sans-serif;
+	font-size: 18px;
+	line-height: 1.65;
+}
+
+a {
+	color: var(--text);
+	text-decoration-color: var(--line);
+	text-underline-offset: 0.2em;
+	transition:
+		color 0.15s,
+		text-decoration-color 0.15s;
+}
+a:hover {
+	color: var(--accent);
+	text-decoration-color: currentColor;
+}
+:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 3px;
+	border-radius: 4px;
+}
+
+hr {
+	border: 0;
+	height: 1px;
+	background: var(--divider, var(--line));
+	margin: 2.5rem 0;
+}

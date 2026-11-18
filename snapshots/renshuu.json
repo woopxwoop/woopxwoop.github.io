@@ -1,0 +1,48 @@
+{
+	"fetchedAt": "2026-11-18T22:31:18.981Z",
+	"data": {
+		"adventure_level": 337,
+		"studied": {
+			"total_vocab": 1932,
+			"total_kanji": 411,
+			"total_grammar": 154
+		},
+		"level_progress_percs": {
+			"vocab": {
+				"n5": 100,
+				"n4": 51,
+				"n3": 7,
+				"n2": 4,
+				"n1": 2
+			},
+			"kanji": {
+				"n5": 100,
+				"n4": 100,
+				"n3": 44,
+				"n2": 2,
+				"n1": 0
+			},
+			"grammar": {
+				"n5": 100,
+				"n4": 42,
+				"n3": 1,
+				"n2": 0,
+				"n1": 0
+			}
+		},
+		"streaks": {
+			"vocab": {
+				"days_studied_in_a_row": 0,
+				"days_studied_in_a_row_alltime": 67
+			},
+			"kanji": {
+				"days_studied_in_a_row": 0,
+				"days_studied_in_a_row_alltime": 67
+			},
+			"grammar": {
+				"days_studied_in_a_row": 0,
+				"days_studied_in_a_row_alltime": 67
+			}
+		}
+	}
+}

@@ -1,0 +1,96 @@
+---
+// One line of stats that cross-fades through items.
+// Without JS, or with reduced motion, it's simply a static stacked list.
+import type { StatusItem } from '../data/status';
+
+interface Props {
+	items: StatusItem[];
+	interval?: number; // ms per item
+}
+const { items, interval = 4500 } = Astro.props;
+---
+
+{
+	items.length > 0 && (
+		<ul class="ticker" data-interval={interval} aria-label="Recent stats">
+			{items.map((item, i) => (
+				<li class:list={{ active: i === 0 }}>
+					<span class="label">{item.label}</span>
+					{item.href ? (
+						<a href={item.href} target="_blank" rel="noopener">
+							{item.text}
+						</a>
+					) : (
+						<span>{item.text}</span>
+					)}
+				</li>
+			))}
+		</ul>
+	)
+}
+
+<script>
+	const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+	for (const ticker of document.querySelectorAll<HTMLElement>('.ticker')) {
+		const items = [...ticker.children] as HTMLElement[];
+		if (reduce || items.length < 2) continue;
+
+		ticker.classList.add('rotating');
+		let i = 0;
+		let paused = false;
+		ticker.addEventListener('mouseenter', () => (paused = true));
+		ticker.addEventListener('mouseleave', () => (paused = false));
+		ticker.addEventListener('focusin', () => (paused = true));
+		ticker.addEventListener('focusout', () => (paused = false));
+
+		setInterval(() => {
+			if (paused || document.hidden) return;
+			items[i].classList.remove('active');
+			i = (i + 1) % items.length;
+			items[i].classList.add('active');
+		}, Number(ticker.dataset.interval));
+	}
+</script>
+
+<style>
+	.ticker {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		font-size: 0.95rem;
+		color: var(--muted);
+	}
+
+	.label {
+		margin-right: 0.6em;
+		color: var(--text);
+	}
+
+	a {
+		color: var(--muted);
+		text-decoration: none;
+	}
+	a:hover {
+		color: var(--accent);
+	}
+
+	/* Rotating mode: stack all items in one grid cell; only .active is visible.
+	   The cell sizes to the tallest item, so nothing below jumps. */
+	.ticker.rotating {
+		display: grid;
+	}
+	.ticker.rotating li {
+		grid-area: 1 / 1;
+		opacity: 0;
+		transform: translateY(4px);
+		transition:
+			opacity 0.5s ease,
+			transform 0.5s ease;
+		pointer-events: none;
+	}
+	.ticker.rotating li.active {
+		opacity: 1;
+		transform: none;
+		pointer-events: auto;
+	}
+</style>
