@@ -43,6 +43,9 @@ jobs:
         env:
           RENSHUU_API_KEY: ${{ secrets.RENSHUU_API_KEY }}
           CANVAS_FEED_URL: ${{ secrets.CANVAS_FEED_URL }}
+          HARDCOVER_API_KEY: ${{ secrets.HARDCOVER_API_KEY }}
+          # Automatic per-run token (no secret to create); enough to read public GitHub data.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: actions/upload-pages-artifact@v3
         with:

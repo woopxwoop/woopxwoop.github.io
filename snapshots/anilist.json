@@ -1,5 +1,5 @@
 {
-	"fetchedAt": "2026-11-21T16:36:09.685Z",
+	"fetchedAt": "2026-11-21T21:28:38.249Z",
 	"data": {
 		"user": {
 			"name": "GaryFlipsTables",
@@ -24,7 +24,10 @@
 						"english": "Mushoku Tensei: Jobless Reincarnation"
 					},
 					"episodes": 11,
-					"siteUrl": "https://anilist.co/anime/108465"
+					"siteUrl": "https://anilist.co/anime/108465",
+					"coverImage": {
+						"large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx108465-1ANspF1EWyFx.jpg"
+					}
 				}
 			},
 			{
@@ -37,7 +40,10 @@
 						"english": "Mushoku Tensei: Jobless Reincarnation Cour 2"
 					},
 					"episodes": 12,
-					"siteUrl": "https://anilist.co/anime/127720"
+					"siteUrl": "https://anilist.co/anime/127720",
+					"coverImage": {
+						"large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx127720-ADJgIrUVMdU9.jpg"
+					}
 				}
 			},
 			{
@@ -50,7 +56,10 @@
 						"english": "Attack on Titan Final Season"
 					},
 					"episodes": 16,
-					"siteUrl": "https://anilist.co/anime/110277"
+					"siteUrl": "https://anilist.co/anime/110277",
+					"coverImage": {
+						"large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx110277-sKUNXAsWMNFw.jpg"
+					}
 				}
 			}
 		],
@@ -63,7 +72,10 @@
 					"english": "One Piece"
 				},
 				"chapters": null,
-				"siteUrl": "https://anilist.co/manga/30013"
+				"siteUrl": "https://anilist.co/manga/30013",
+				"coverImage": {
+					"large": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx30013-BeslEMqiPhlk.jpg"
+				}
 			}
 		},
 		"manga": {
@@ -80,7 +92,10 @@
 							"english": "Pick Me Up"
 						},
 						"chapters": null,
-						"siteUrl": "https://anilist.co/manga/159441"
+						"siteUrl": "https://anilist.co/manga/159441",
+						"coverImage": {
+							"large": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx159441-9W8201jAT9Yv.jpg"
+						}
 					}
 				},
 				{
@@ -93,7 +108,10 @@
 							"english": "Jujutsu Kaisen"
 						},
 						"chapters": 272,
-						"siteUrl": "https://anilist.co/manga/101517"
+						"siteUrl": "https://anilist.co/manga/101517",
+						"coverImage": {
+							"large": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx101517-H3TdM3g5ZUe9.jpg"
+						}
 					}
 				},
 				{
@@ -106,7 +124,10 @@
 							"english": "Blink Master of the Magic Academy"
 						},
 						"chapters": null,
-						"siteUrl": "https://anilist.co/manga/178379"
+						"siteUrl": "https://anilist.co/manga/178379",
+						"coverImage": {
+							"large": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/medium/bx178379-dokda9kEw3Ns.jpg"
+						}
 					}
 				}
 			]

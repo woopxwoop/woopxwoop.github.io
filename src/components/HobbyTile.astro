@@ -1,0 +1,88 @@
+---
+import { Image } from 'astro:assets';
+import type { HobbyTile } from '../data/hobbies';
+
+interface Props {
+	tile: HobbyTile;
+}
+
+const { tile } = Astro.props;
+const external = tile.href?.startsWith('http');
+const Tag = tile.href ? 'a' : 'div';
+---
+
+<Tag class="tile" href={tile.href} {...(external && { rel: 'noopener' })}>
+	<div class="cover">
+		{
+			tile.cover ? (
+				// Downloaded and resized at build time, so the live site never hotlinks
+				// Hardcover/AniList. alt="" because the label right below says what it is.
+				<Image src={tile.cover} alt="" width={240} height={360} fit="cover" />
+			) : (
+				<span class="glyph" aria-hidden="true">{tile.glyph}</span>
+			)
+		}
+	</div>
+	<span class="label">{tile.label}{external && <span class="ext" aria-label="(external)"> ↗</span>}</span>
+	<span class="status">{tile.status}</span>
+</Tag>
+
+<style>
+	.tile {
+		display: flex;
+		flex-direction: column;
+		min-width: 0;
+		color: var(--text);
+		text-decoration: none;
+	}
+
+	.cover {
+		display: grid;
+		place-items: center;
+		aspect-ratio: 2 / 3; /* book covers and posters vary; crop them all to one shape */
+		margin-bottom: 0.6rem;
+		overflow: hidden;
+		border-radius: 4px;
+		background: var(--surface);
+		box-shadow: inset 0 0 0 1px var(--line);
+	}
+	.cover img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.25s;
+	}
+	.glyph {
+		font-size: clamp(2.5rem, 8vw, 3.5rem);
+		line-height: 1;
+	}
+
+	.label {
+		font-size: 0.95rem;
+	}
+	.ext {
+		color: var(--muted);
+		font-size: 0.8em;
+	}
+	.status {
+		/* Long titles get one line, then an ellipsis. */
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		font-size: 0.8rem;
+		line-height: 1.4;
+		color: var(--muted);
+	}
+
+	a.tile:hover .label {
+		color: var(--accent);
+	}
+	a.tile:hover .cover img {
+		transform: scale(1.03);
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.cover img {
+			transition: none;
+		}
+	}
+</style>

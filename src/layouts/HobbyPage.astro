@@ -1,0 +1,61 @@
+---
+// Shared frame for /hobbies/<name> pages: back link, title, one-line blurb,
+// then whatever sections the hobby needs (slot).
+import Site from './Site.astro';
+import { SITE_NAME, url } from '../consts';
+
+interface Props {
+	title: string; // "reading"
+	blurb: string;
+}
+
+const { title, blurb } = Astro.props;
+---
+
+<Site title={`${title} · ${SITE_NAME}`} description={blurb}>
+	<main>
+		<a class="back" href={url('/hobbies')}>← hobbies</a>
+		<h1>{title}</h1>
+		<p class="blurb">{blurb}</p>
+		<slot />
+	</main>
+</Site>
+
+<style>
+	main {
+		max-width: var(--page-width);
+		margin: 0 auto;
+		padding: 3rem var(--gutter) 5rem;
+	}
+	main > :global(*) {
+		max-width: var(--prose-width);
+	}
+
+	.back {
+		font-size: 0.9rem;
+		color: var(--muted);
+		text-decoration: none;
+	}
+
+	h1 {
+		margin: 0.3rem 0 0.3em;
+		font-size: clamp(2.2rem, 6vw, 3rem);
+		line-height: 1.05;
+		letter-spacing: -0.02em;
+	}
+
+	.blurb {
+		margin: 0 0 2.5rem;
+		color: var(--muted);
+	}
+
+	/* Section headings: same small-caps label style as the home page week list. */
+	main :global(h2) {
+		margin: 2.5rem 0 0.9rem;
+		font-size: 0.8rem;
+		font-weight: 400;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--muted);
+	}
+</style>

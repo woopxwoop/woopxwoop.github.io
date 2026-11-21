@@ -1,4 +1,5 @@
-// pnpm canvas:sync — snapshot your Canvas Planner status (see src/data/planner.ts).
+// pnpm canvas:sync — snapshot your Canvas Planner status (see src/data/planner.ts)
+// and your course history (src/data/canvas-courses.ts).
 //
 // Opens Edge (or Chrome), waits for you to sign in with NetID + Duo, then calls the
 // same /api/v1/planner/items endpoint the Canvas dashboard uses, *from inside the
@@ -10,6 +11,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { chromium, type BrowserContext } from 'playwright-core';
 import { PLANNER_FILE, plannerSchema, type PlannerItem } from '../src/data/planner.ts';
+import { COURSES_FILE, coursesSchema, type CanvasCourse } from '../src/data/canvas-courses.ts';
 
 const CANVAS = 'https://canvas.wisc.edu';
 const PROFILE_DIR = path.resolve('.canvas-profile');
@@ -59,6 +61,47 @@ function fetchSubmissionTypesInPage({ origin, courseIds }: { origin: string; cou
 		}
 		return types;
 	})();
+}
+
+/**
+ * Every course you're (or were) a student in. Asked for per enrollment state because
+ * Canvas's default listing leaves out concluded courses. Also runs in the page.
+ */
+function fetchCoursesInPage({ origin }: { origin: string }) {
+	return (async () => {
+		const byId = new Map<number, unknown>();
+		for (const state of ['active', 'completed']) {
+			const params = new URLSearchParams({ enrollment_type: 'student', enrollment_state: state, per_page: '100' });
+			params.append('include[]', 'term');
+			let next: string | null = `${origin}/api/v1/courses?${params}`;
+			while (next) {
+				const res: Response = await fetch(next, { headers: { Accept: 'application/json' } });
+				if (!res.ok) throw new Error(`courses HTTP ${res.status}`);
+				for (const c of JSON.parse((await res.text()).replace(/^while\(1\);/, '')) as { id: number }[]) byId.set(c.id, c);
+				next = res.headers.get('Link')?.match(/<([^>]+)>;\s*rel="next"/)?.[1] ?? null;
+			}
+		}
+		return [...byId.values()];
+	})();
+}
+
+type RawCourse = {
+	id: number;
+	course_code?: string;
+	name?: string;
+	access_restricted_by_date?: boolean; // concluded courses you can no longer open: only an id
+	term?: { name?: string; start_at?: string | null } | null;
+};
+
+function toCourse(raw: RawCourse): CanvasCourse | null {
+	if (raw.access_restricted_by_date || !raw.course_code || !raw.name) return null;
+	return {
+		id: String(raw.id),
+		code: raw.course_code,
+		name: raw.name,
+		term: raw.term?.name ?? null,
+		termStart: raw.term?.start_at ?? null,
+	};
 }
 
 type RawItem = {
@@ -124,7 +167,7 @@ context.on('close', () => {
 });
 try {
 	const page = await waitForSignIn(context);
-	console.log('Signed in. Fetching planner + assignments — keep the window open, it closes itself when done...');
+	console.log('Signed in. Fetching planner, assignments + courses — keep the window open, it closes itself when done...');
 	const raw = (await page.evaluate(fetchPlannerInPage, {
 		origin: CANVAS,
 		start: RANGE.start.toISOString(),
@@ -153,6 +196,15 @@ try {
 	for (const i of items) for (const t of i.submissionTypes.length ? i.submissionTypes : ['(none listed)']) byType[t] = (byType[t] ?? 0) + 1;
 	console.log('Submission types:', byType);
 	console.log(`Wrote ${path.relative(process.cwd(), PLANNER_FILE)} — commit it so the deployed site sees it.`);
+
+	const rawCourses = (await page.evaluate(fetchCoursesInPage, { origin: CANVAS })) as RawCourse[];
+	const courses = coursesSchema.parse({
+		syncedAt: new Date().toISOString(),
+		courses: rawCourses.map(toCourse).filter((c): c is CanvasCourse => c !== null),
+	});
+	await fs.writeFile(COURSES_FILE, JSON.stringify(courses, null, '\t') + '\n');
+	console.log(`Synced ${courses.courses.length} courses (${rawCourses.length - courses.courses.length} restricted/skipped).`);
+	console.log(`Wrote ${path.relative(process.cwd(), COURSES_FILE)} — commit it too.`);
 	finished = true;
 } finally {
 	await context.close();

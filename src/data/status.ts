@@ -2,6 +2,7 @@
 // This is the place to decide what you want to brag about and how it reads.
 import type { AniList } from './anilist';
 import type { Canvas } from './canvas';
+import type { GitHub } from './github';
 import { JLPT, type Renshuu } from './renshuu';
 
 export interface StatusItem {
@@ -33,6 +34,11 @@ function latestItem(
 /** Just the featured manga (One Piece): "reading · One Piece · ch 1,198". */
 export function anilistStatus({ featured }: AniList): StatusItem[] {
 	return [latestItem(featured, { active: 'reading', unit: 'ch', total: featured.media.chapters })];
+}
+
+/** "github · 642 contributions this year" (GitHub's calendar = the last ~12 months). */
+export function githubStatus({ url, totalContributions }: GitHub): StatusItem[] {
+	return [{ label: 'github', text: `${fmt(totalContributions)} contributions this year`, href: url }];
 }
 
 /** The JLPT level you're currently working through: first one (N5 → N1) not at 100%. */

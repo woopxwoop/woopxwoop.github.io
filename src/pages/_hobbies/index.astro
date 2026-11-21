@@ -1,0 +1,72 @@
+---
+import Site from '../../layouts/Site.astro';
+import HobbyTile from '../../components/HobbyTile.astro';
+import { SITE_NAME } from '../../consts';
+import { getAniList } from '../../data/anilist';
+import { getHardcover } from '../../data/hardcover';
+import { hobbySections } from '../../data/hobbies';
+import { getRenshuu } from '../../data/renshuu';
+
+// Memoized sources: the home page and this one share a single fetch per build.
+const [hardcover, anilist, renshuu] = await Promise.all([getHardcover(), getAniList(), getRenshuu()]);
+const sections = hobbySections({ hardcover, anilist, renshuu });
+---
+
+<Site title={`hobbies · ${SITE_NAME}`} description="What I read, watch and study, updated on every deploy.">
+	<main>
+		<h1>hobbies</h1>
+		{
+			sections.map((s) => (
+				<section aria-labelledby={`h-${s.heading}`}>
+					<h2 id={`h-${s.heading}`}>{s.heading}</h2>
+					<ul class="tiles">
+						{s.tiles.map((tile) => (
+							<li>
+								<HobbyTile tile={tile} />
+							</li>
+						))}
+					</ul>
+				</section>
+			))
+		}
+	</main>
+</Site>
+
+<style>
+	main {
+		max-width: var(--page-width);
+		margin: 0 auto;
+		padding: 3.5rem var(--gutter) 5rem;
+	}
+
+	h1 {
+		margin: 0 0 2.5rem;
+		font-size: clamp(2.2rem, 6vw, 3rem);
+		line-height: 1.05;
+		letter-spacing: -0.02em;
+	}
+
+
+	section + section {
+		margin-top: 3rem;
+	}
+	/* Same small uppercase label as "this week" on the home page. */
+	h2 {
+		margin: 0 0 1rem;
+		font-size: 0.8rem;
+		font-weight: 400;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--muted);
+	}
+
+	.tiles {
+		display: grid;
+		/* Two across on phones, up to four across at full page width. */
+		grid-template-columns: repeat(auto-fill, minmax(min(9.5rem, 40vw), 1fr));
+		gap: 2rem 1.25rem;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+</style>

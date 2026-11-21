@@ -33,6 +33,9 @@ const QUERY = /* GraphQL */ `
 					}
 					episodes
 					siteUrl
+					coverImage {
+						large
+					}
 				}
 			}
 		}
@@ -57,6 +60,9 @@ const QUERY = /* GraphQL */ `
 				}
 				chapters
 				siteUrl
+				coverImage {
+					large
+				}
 			}
 		}
 		recentManga: Page(perPage: 3) {
@@ -71,6 +77,9 @@ const QUERY = /* GraphQL */ `
 					}
 					chapters
 					siteUrl
+					coverImage {
+						large
+					}
 				}
 			}
 		}
@@ -79,6 +88,7 @@ const QUERY = /* GraphQL */ `
 
 const listStatus = z.enum(['CURRENT', 'PLANNING', 'COMPLETED', 'DROPPED', 'PAUSED', 'REPEATING']);
 const title = z.object({ romaji: z.string().nullable(), english: z.string().nullable() });
+const coverImage = z.object({ large: z.string().url().nullable() });
 
 const schema = z.object({
 	user: z.object({
@@ -102,6 +112,7 @@ const schema = z.object({
 				title,
 				episodes: z.number().nullable(),
 				siteUrl: z.string().url(),
+				coverImage,
 			}),
 		}),
 	),
@@ -112,6 +123,7 @@ const schema = z.object({
 			title,
 			chapters: z.number().nullable(), // null while still ongoing
 			siteUrl: z.string().url(),
+			coverImage,
 		}),
 	}),
 	manga: z.object({
@@ -126,6 +138,7 @@ const schema = z.object({
 					title,
 					chapters: z.number().nullable(),
 					siteUrl: z.string().url(),
+					coverImage,
 				}),
 			}),
 		),

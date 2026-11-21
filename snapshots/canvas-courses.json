@@ -1,0 +1,243 @@
+{
+	"syncedAt": "2026-11-21T20:44:15.449Z",
+	"courses": [
+		{
+			"id": "347676",
+			"code": "Career Fair Preparation",
+			"name": "Career Fair Preparation",
+			"term": "Ongoing",
+			"termStart": null
+		},
+		{
+			"id": "94677",
+			"code": "Design Innovation Lab Training",
+			"name": "Design Innovation Lab Training",
+			"term": "Ongoing",
+			"termStart": null
+		},
+		{
+			"id": "527958",
+			"code": "FA26 ECE 203",
+			"name": "ECE 203: Signals, Information, and Computation FA26",
+			"term": "Fall 2026-2027",
+			"termStart": "2026-08-24T00:00:00Z"
+		},
+		{
+			"id": "399058",
+			"code": "ECE Undergrad Resources",
+			"name": "ECE Undergrad Resources",
+			"term": "Ongoing",
+			"termStart": null
+		},
+		{
+			"id": "516197",
+			"code": "FA26 ECE 230 001",
+			"name": "ECE230: Circuit Analysis (001) FA26",
+			"term": "Fall 2026-2027",
+			"termStart": "2026-08-24T00:00:00Z"
+		},
+		{
+			"id": "516210",
+			"code": "FA26 ECE 270 001",
+			"name": "ECE270: Circuits Laboratory I (001) FA26",
+			"term": "Fall 2026-2027",
+			"termStart": "2026-08-24T00:00:00Z"
+		},
+		{
+			"id": "516350",
+			"code": "FA26 ECE 353 001",
+			"name": "ECE353: Introduction to Microprocessor Systems (001) FA26",
+			"term": "Fall 2026-2027",
+			"termStart": "2026-08-24T00:00:00Z"
+		},
+		{
+			"id": "124681",
+			"code": "Engineering Information for Cross Campus Students",
+			"name": "Engineering Information for Cross Campus Students",
+			"term": "Ongoing",
+			"termStart": null
+		},
+		{
+			"id": "429360",
+			"code": "Fall 2024 AlcoholEdu Course",
+			"name": "Fall 2024 AlcoholEdu Course",
+			"term": "Ongoing",
+			"termStart": null
+		},
+		{
+			"id": "429818",
+			"code": "Free Expression at UW-Madison Fall 2024",
+			"name": "Free Expression at UW-Madison Fall 2024",
+			"term": "Ongoing",
+			"termStart": null
+		},
+		{
+			"id": "532509",
+			"code": "GetWIse Annual Refresher 2026-2027",
+			"name": "GetWIse Annual Refresher 2026-2027",
+			"term": "Ongoing",
+			"termStart": null
+		},
+		{
+			"id": "275128",
+			"code": "Jobs, Internships & How to Get Them",
+			"name": "Jobs, Internships & How to Get Them",
+			"term": "Ongoing",
+			"termStart": null
+		},
+		{
+			"id": "399196",
+			"code": "L&S Academic Advising 101 (2024-2025)",
+			"name": "L&S Academic Advising 101 (2024-2025)",
+			"term": "Supplemental",
+			"termStart": null
+		},
+		{
+			"id": "518324",
+			"code": "FA26 MATH 234 002",
+			"name": "MATH234: Calculus--Functions of Several Variables (002) FA26",
+			"term": "Fall 2026-2027",
+			"termStart": "2026-08-24T00:00:00Z"
+		},
+		{
+			"id": "429987",
+			"code": "Our Wisconsin Fall 2024",
+			"name": "Our Wisconsin Fall 2024",
+			"term": "Ongoing",
+			"termStart": null
+		},
+		{
+			"id": "429361",
+			"code": "U Got This! | Fall 2024",
+			"name": "U Got This! | Fall 2024",
+			"term": "Ongoing",
+			"termStart": null
+		},
+		{
+			"id": "449346",
+			"code": "SP25 ASIALANG 104 - All Sections",
+			"name": "ASIALANG104: Second Semester Japanese (All Sections) SP25",
+			"term": "Spring 2024-2025",
+			"termStart": "2024-12-23T00:00:00Z"
+		},
+		{
+			"id": "477939",
+			"code": "FA25 ASIALANG 203 002",
+			"name": "ASIALANG203: Third Semester Japanese (002) FA25",
+			"term": "Fall 2025-2026",
+			"termStart": "2025-08-25T00:00:00Z"
+		},
+		{
+			"id": "427315",
+			"code": "FA24 COMPSCI 300 001",
+			"name": "COMPSCI300: Programming II (001) FA24",
+			"term": "Fall 2024-2025",
+			"termStart": "2024-08-26T00:00:00Z"
+		},
+		{
+			"id": "434094",
+			"code": "SP25 COMPSCI 354 003",
+			"name": "COMPSCI354: Machine Organization and Programming (003) SP25",
+			"term": "Spring 2024-2025",
+			"termStart": "2024-12-23T00:00:00Z"
+		},
+		{
+			"id": "447802",
+			"code": "SP25 COMPSCI 400 001",
+			"name": "COMPSCI400: Programming III (001) SP25",
+			"term": "Spring 2024-2025",
+			"termStart": "2024-12-23T00:00:00Z"
+		},
+		{
+			"id": "463600",
+			"code": "FA25 COMPSCI 537 001",
+			"name": "COMPSCI537: Introduction to Operating Systems (001) FA25",
+			"term": "Fall 2025-2026",
+			"termStart": "2025-08-25T00:00:00Z"
+		},
+		{
+			"id": "463616",
+			"code": "FA25 COMPSCI 540 001",
+			"name": "COMPSCI540: Introduction to Artificial Intelligence (001) FA25",
+			"term": "Fall 2025-2026",
+			"termStart": "2025-08-25T00:00:00Z"
+		},
+		{
+			"id": "477155",
+			"code": "FA25 COMPSCI 571 001",
+			"name": "COMPSCI571: Building User Interfaces (001) FA25",
+			"term": "Fall 2025-2026",
+			"termStart": "2025-08-25T00:00:00Z"
+		},
+		{
+			"id": "453588",
+			"code": "SU25 COMPSCI 577 001 ZHH",
+			"name": "COMPSCI577: Introduction to Algorithms (001) ZHH SU25",
+			"term": "Summer 2025",
+			"termStart": "2025-05-12T00:00:00Z"
+		},
+		{
+			"id": "500311",
+			"code": "SP26 COMPSCI 639 002",
+			"name": "COMPSCI639: Undergraduate Elective Topics in Computing (002) SP26",
+			"term": "Spring 2025-2026",
+			"termStart": "2025-12-22T00:00:00Z"
+		},
+		{
+			"id": "500315",
+			"code": "SP26 COMPSCI 639 003",
+			"name": "COMPSCI639: Undergraduate Elective Topics in Computing (003) SP26",
+			"term": "Spring 2025-2026",
+			"termStart": "2025-12-22T00:00:00Z"
+		},
+		{
+			"id": "499089",
+			"code": "SP26 ECE 210",
+			"name": "ECE210: Introductory Experience in Electrical Engineering SP26",
+			"term": "Spring 2025-2026",
+			"termStart": "2025-12-22T00:00:00Z"
+		},
+		{
+			"id": "424198",
+			"code": "FA24 LIS 202 001",
+			"name": "LIS202: Informational Divides and Differences in a Multicultural Society (001) FA24",
+			"term": "Fall 2024-2025",
+			"termStart": "2024-08-26T00:00:00Z"
+		},
+		{
+			"id": "437531",
+			"code": "SP25 MATH and CS 240 001 002",
+			"name": "MATH and CS 240: Introduction to Discrete Mathematics (001 002) SP25",
+			"term": "Spring 2024-2025",
+			"termStart": "2024-12-23T00:00:00Z"
+		},
+		{
+			"id": "417699",
+			"code": "FA24 MATH 340 002",
+			"name": "MATH340: Elementary Matrix and Linear Algebra (002) FA24",
+			"term": "Fall 2024-2025",
+			"termStart": "2024-08-26T00:00:00Z"
+		},
+		{
+			"id": "422884",
+			"code": "FA24 PHILOS 104 001",
+			"name": "PHILOS104: Special Topics in Philosophy for Freshmen (001) FA24",
+			"term": "Fall 2024-2025",
+			"termStart": "2024-08-26T00:00:00Z"
+		},
+		{
+			"id": "497392",
+			"code": "SP26 PHYSICS 202 All Sections",
+			"name": "PHYSICS202: General Physics (All Sections) SP26",
+			"term": "Spring 2025-2026",
+			"termStart": "2025-12-22T00:00:00Z"
+		},
+		{
+			"id": "458680",
+			"code": "SU25 STAT 324 001 DHH",
+			"name": "STAT324: Introductory Applied Statistics for Engineers (001) DHH SU25",
+			"term": "Summer 2025",
+			"termStart": "2025-05-12T00:00:00Z"
+		}
+	]
+}

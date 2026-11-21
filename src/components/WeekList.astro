@@ -1,14 +1,14 @@
 ---
-// This week at a glance: Renshuu study days, then unfinished Canvas work by due date.
-// Finished work isn't shown. Read-only: everything comes from Renshuu/Canvas data.
-// Canvas done/missing is from the last `pnpm canvas:sync` (committed snapshot).
+// This week at a glance: Renshuu study as a row of day-squares, GitHub as a commit
+// count, then unfinished Canvas work by due date. Finished work isn't shown.
+// Read-only: everything comes from the sources. Canvas done/missing is from the last
+// `pnpm canvas:sync` (committed snapshot).
 import type { Task, TaskStatus, Week } from '../data/week';
-
 interface Props {
 	week: Week;
 }
 const { week } = Astro.props;
-const { study, syncedAt } = week;
+const { habits, syncedAt } = week;
 
 const open = week.tasks.filter((t) => t.status !== 'done');
 
@@ -27,24 +27,37 @@ const when = (t: Task) => [t.isToday ? 'today' : t.dayLabel, t.time].filter(Bool
 <aside class="week" aria-labelledby="week-h">
 	<h2 id="week-h">this week</h2>
 
-	<section class="study" aria-label={`Japanese: studied ${study.count} of ${study.goal} days this week`}>
-		<span class="label" aria-hidden="true">japanese</span>
-		<ol class="days">
-			{
-				study.days.map((d) => (
-					<li
-						class:list={{ practiced: d.practiced, today: d.isToday, future: d.future }}
-						title={`${d.label}${d.isToday ? ' (today)' : ''}: ${d.practiced ? 'studied' : d.future ? 'upcoming' : 'not studied'}`}
-					>
-						<span class="sr-only">
-							{d.label}
-							{d.isToday && ' (today)'}: {d.practiced ? 'studied' : d.future ? 'upcoming' : 'not studied'}
+	<div class="habits">
+		{
+			habits.map((row) => (
+				<section class="habit" aria-label={row.summary}>
+					{row.href ? (
+						<a class="label" href={row.href} target="_blank" rel="noopener">
+							{row.label}
+						</a>
+					) : (
+						<span class="label" aria-hidden="true">
+							{row.label}
 						</span>
-					</li>
-				))
-			}
-		</ol>
-	</section>
+					)}
+					{row.kind === 'count' ? (
+						<span class="count">{row.text}</span>
+					) : (
+					<ol class="days">
+						{row.days.map((d) => (
+							<li class:list={{ active: d.active, today: d.isToday, future: d.future }} title={`${d.label}${d.isToday ? ' (today)' : ''}: ${d.detail}`}>
+								<span class="sr-only">
+									{d.label}
+									{d.isToday && ' (today)'}: {d.detail}
+								</span>
+							</li>
+						))}
+					</ol>
+					)}
+				</section>
+			))
+		}
+	</div>
 
 	{
 		open.length === 0 ? (
@@ -81,15 +94,23 @@ const when = (t: Task) => [t.isToday ? 'today' : t.dayLabel, t.time].filter(Bool
 	}
 
 	<p class="updated">
-		canvas status {syncedAt ? <>synced <time datetime={syncedAt} data-relative>{syncedAt.slice(0, 10)}</time></> : 'never synced'}
+		{
+			syncedAt ? (
+				// "updated 3h ago": hours since the last canvas:sync.
+				<span title="when canvas status was last synced">
+					updated <time datetime={syncedAt} data-relative>{syncedAt.slice(0, 10)}</time>
+				</span>
+			) : (
+				'canvas never synced'
+			)
+		}
 	</p>
 </aside>
 
 <script>
-	// "synced 3h ago" in the viewer's clock.
+	// "3h ago" since the last sync, in the viewer's clock. Without JS: "updated 2026-11-21".
 	for (const el of document.querySelectorAll<HTMLTimeElement>('.week time[data-relative]')) {
-		const hours = Math.round((Date.now() - Date.parse(el.dateTime)) / 3_600_000);
-		el.textContent = hours < 1 ? 'just now' : hours < 48 ? `${hours}h ago` : `${Math.round(hours / 24)} days ago`;
+		el.textContent = `${Math.floor((Date.now() - Date.parse(el.dateTime)) / 3_600_000)}h ago`;
 	}
 </script>
 
@@ -115,7 +136,7 @@ const when = (t: Task) => [t.isToday ? 'today' : t.dayLabel, t.time].filter(Bool
 	summary {
 		display: flex;
 		align-items: center;
-		gap: 0.35em;
+		gap: 0.6rem; /* same as .tasks column-gap, so "to do" lines up with the task titles */
 		width: fit-content;
 		margin-bottom: 0.25rem;
 		font-size: 0.8rem;
@@ -127,17 +148,19 @@ const when = (t: Task) => [t.isToday ? 'today' : t.dayLabel, t.time].filter(Bool
 	summary::-webkit-details-marker {
 		display: none; /* ...including Safari's */
 	}
+	/* Chevron drawn centred in a square as wide as the task checkboxes (0.85em of 0.9rem),
+	   so it sits in the same column. Rotating a centred square keeps it centred. */
 	summary::before {
 		content: '';
-		width: 0.35em;
-		height: 0.35em;
-		border-right: 1.5px solid currentColor;
-		border-bottom: 1.5px solid currentColor;
-		transform: rotate(-45deg); /* ▸ when closed */
-		transition: transform 0.15s;
+		flex-shrink: 0;
+		width: 0.765rem;
+		height: 0.765rem;
+		background: currentColor;
+		mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M6 3.5 10.5 8 6 12.5' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+		transition: transform 0.15s; /* ▸ when closed */
 	}
 	.group[open] > summary::before {
-		transform: rotate(45deg); /* ▾ when open */
+		transform: rotate(90deg); /* ▾ when open */
 	}
 	summary:hover {
 		color: var(--text);
@@ -175,16 +198,30 @@ const when = (t: Task) => [t.isToday ? 'today' : t.dayLabel, t.time].filter(Bool
 		opacity: 0.7;
 	}
 
-	/* ---------- Study goal: one line, a square per day ---------- */
-	.study {
+	/* ---------- Habit rows: a label + a square per day ---------- */
+	.habits {
+		display: grid;
+		gap: 0.45rem;
+	}
+	.habit {
 		display: flex;
 		align-items: center;
 		gap: 0.7rem;
 	}
-	/* Same small muted style as the "to do"/"done" headings, so it reads as a label, not content. */
+	/* Same small muted style as the "to do" heading, so it reads as a label, not content.
+	   Fixed width so every row's squares start at the same x. */
 	.label {
+		min-width: 4.5em;
 		font-size: 0.8rem;
 		color: var(--muted);
+		text-decoration: none;
+	}
+	a.label:hover {
+		color: var(--text);
+	}
+	.count {
+		font-size: 0.8rem;
+		font-variant-numeric: tabular-nums;
 	}
 	.days {
 		display: flex;
@@ -200,7 +237,7 @@ const when = (t: Task) => [t.isToday ? 'today' : t.dayLabel, t.time].filter(Bool
 		border: 1.5px solid var(--line);
 		border-radius: 2px;
 	}
-	.days .practiced {
+	.days .active {
 		border-color: var(--accent);
 		background: var(--accent);
 	}
@@ -289,6 +326,9 @@ const when = (t: Task) => [t.isToday ? 'today' : t.dayLabel, t.time].filter(Bool
 		margin: 1.25rem 0 0;
 		color: var(--muted);
 		font-size: 0.8rem;
+	}
+	.updated {
+		text-align: right;
 	}
 
 	.sr-only {

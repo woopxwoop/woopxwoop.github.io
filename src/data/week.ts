@@ -1,5 +1,6 @@
 // Combines Canvas + Renshuu into the weekly list on the home page (components/WeekList.astro).
 import type { Canvas, CanvasEvent } from './canvas';
+import type { GitHub } from './github';
 import type { Planner, PlannerItem } from './planner';
 import { heatmapByDay, type HeatValue, type RenshuuHeatmap } from './renshuu';
 import { addDays, clockOf, dateOf, dayOf, shortWeekday, timeOf, weekOf, type Day } from './time';
@@ -64,11 +65,28 @@ function statusOf(event: CanvasEvent, item: PlannerItem | undefined, past: boole
 	return canvasSeesSubmissions(item, event.course, submittingTools) ? 'overdue' : 'external';
 }
 
+interface HabitBase {
+	label: string; // "japanese"
+	summary: string; // spoken by screen readers: "Japanese: studied 1 of 5 days this week"
+	href?: string;
+}
+/** A row of 7 day-squares: "did X happen on this day of the week?" */
+export interface DaysRow extends HabitBase {
+	kind: 'days';
+	days: { day: Day; label: string; isToday: boolean; future: boolean; active: boolean; detail: string }[];
+}
+/** A single number for the week: "12 commits". */
+export interface CountRow extends HabitBase {
+	kind: 'count';
+	text: string;
+}
+export type HabitRow = DaysRow | CountRow;
+
 export interface Week {
 	today: Day;
 	syncedAt: string | null; // last `pnpm canvas:sync`
 	tasks: Task[]; // unfinished first, then by due date
-	study: { days: { day: Day; label: string; isToday: boolean; future: boolean; practiced: boolean }[]; count: number; goal: number };
+	habits: HabitRow[];
 }
 
 /**
@@ -79,7 +97,40 @@ function countsAsPracticed(value: HeatValue | undefined): boolean {
 	return typeof value === 'number' && value > 0;
 }
 
-export function buildWeek(canvas: Canvas, heatmap: RenshuuHeatmap, planner: Planner | null, now = new Date()): Week {
+function habitRow(
+	week: Day[],
+	today: Day,
+	row: {
+		label: string;
+		href?: string;
+		summary: (activeDays: number) => string;
+		detail: (day: Day) => string | null; // what happened that day, or null if nothing
+		idle: string; // shown for a past day where nothing happened
+	},
+): DaysRow {
+	const days = week.map((day) => {
+		const detail = row.detail(day); // null = nothing happened that day
+		const future = day > today;
+		return {
+			day,
+			label: shortWeekday(day),
+			isToday: day === today,
+			future,
+			active: detail !== null,
+			detail: detail ?? (future ? 'upcoming' : row.idle),
+		};
+	});
+	return { kind: 'days', label: row.label, href: row.href, summary: row.summary(days.filter((d) => d.active).length), days };
+}
+
+interface Sources {
+	canvas: Canvas;
+	heatmap: RenshuuHeatmap;
+	github: GitHub;
+	planner: Planner | null;
+}
+
+export function buildWeek({ canvas, heatmap, github, planner }: Sources, now = new Date()): Week {
 	const today = dayOf(now);
 	const week = weekOf(today);
 	const last = addDays(today, LOOKAHEAD_DAYS);
@@ -114,13 +165,28 @@ export function buildWeek(canvas: Canvas, heatmap: RenshuuHeatmap, planner: Plan
 	tasks.sort((a, b) => unfinished(a) - unfinished(b) || a.sortKey.localeCompare(b.sortKey));
 
 	const heat = heatmapByDay(heatmap);
-	const days = week.map((day) => ({
-		day,
-		label: shortWeekday(day),
-		isToday: day === today,
-		future: day > today,
-		practiced: countsAsPracticed(heat[day]),
-	}));
+	const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? '' : 's'}`;
+	// The calendar counts all contributions (commits, PRs, issues, reviews); for this
+	// account that's almost entirely commits. GitHub buckets days by its own boundaries
+	// (not TIMEZONE), so a commit late on Sunday night may count toward the next week.
+	const thisWeek = new Set(week);
+	const commits = github.days.filter((d) => thisWeek.has(d.date)).reduce((sum, d) => sum + d.count, 0);
 
-	return { today, syncedAt: planner?.syncedAt ?? null, tasks: tasks.map(({ sortKey, ...t }) => t), study: { days, count: days.filter((d) => d.practiced).length, goal: STUDY_GOAL } };
+	const habits: HabitRow[] = [
+		habitRow(week, today, {
+			label: 'japanese',
+			summary: (n) => `Japanese: studied ${n} of ${STUDY_GOAL} days this week`,
+			detail: (day) => (countsAsPracticed(heat[day]) ? 'studied' : null),
+			idle: 'not studied',
+		}),
+		{
+			kind: 'count',
+			label: 'github',
+			href: github.url,
+			text: plural(commits, 'commit'),
+			summary: `GitHub: ${plural(commits, 'commit')} this week`,
+		},
+	];
+
+	return { today, syncedAt: planner?.syncedAt ?? null, tasks: tasks.map(({ sortKey, ...t }) => t), habits };
 }

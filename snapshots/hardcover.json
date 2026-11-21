@@ -1,0 +1,105 @@
+{
+	"fetchedAt": "2026-11-21T20:33:57.917Z",
+	"data": {
+		"username": "woopxwoop",
+		"reading": [],
+		"finished": [
+			{
+				"rating": 4,
+				"book": {
+					"title": "Atomic habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones",
+					"slug": "atomic-habits",
+					"pages": 305,
+					"image": {
+						"url": "https://assets.hardcover.app/edition/12605395/629717fe-df46-40b8-8529-dca0323bf699.jpg"
+					},
+					"contributions": [
+						{
+							"author": {
+								"name": "James Clear"
+							}
+						}
+					]
+				},
+				"last_read_date": "2026-11-08"
+			},
+			{
+				"rating": 3.5,
+				"book": {
+					"title": "The Great Gatsby",
+					"slug": "the-great-gatsby",
+					"pages": 180,
+					"image": {
+						"url": "https://assets.hardcover.app/edition/20216419/2a81c52c-7cf2-4477-9bfc-726d0c69f43e.jpg"
+					},
+					"contributions": [
+						{
+							"author": {
+								"name": "F. Scott Fitzgerald"
+							}
+						}
+					]
+				},
+				"last_read_date": null
+			},
+			{
+				"rating": 4,
+				"book": {
+					"title": "Harry Potter and the Philosopher's Stone",
+					"slug": "harry-potter-and-the-philosophers-stone",
+					"pages": 309,
+					"image": {
+						"url": "https://assets.hardcover.app/external_data/4257970/a3a1bbb3dae498a7a8316be0cc9bc5e91f6c34c9.jpeg"
+					},
+					"contributions": [
+						{
+							"author": {
+								"name": "J.K. Rowling"
+							}
+						}
+					]
+				},
+				"last_read_date": null
+			},
+			{
+				"rating": 3.5,
+				"book": {
+					"title": "Harry Potter and the Prisoner of Azkaban",
+					"slug": "harry-potter-and-the-prisoner-of-azkaban",
+					"pages": 448,
+					"image": {
+						"url": "https://assets.hardcover.app/edition/28780168/0012cc5a-9e3a-48d4-95b6-d91f484de17a.jpg"
+					},
+					"contributions": [
+						{
+							"author": {
+								"name": "J.K. Rowling"
+							}
+						}
+					]
+				},
+				"last_read_date": null
+			},
+			{
+				"rating": 4.5,
+				"book": {
+					"title": "Heroes of Olympus: The Complete Series",
+					"slug": "heroes-of-olympus-the-complete-series",
+					"pages": 1000,
+					"image": {
+						"url": "https://assets.hardcover.app/external_data/59810702/6bc607b5778fb83b63912244f91c8bea8330cb48.jpeg"
+					},
+					"contributions": [
+						{
+							"author": {
+								"name": "Rick Riordan"
+							}
+						}
+					]
+				},
+				"last_read_date": null
+			}
+		],
+		"goals": []
+	}
+}

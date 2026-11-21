@@ -9,6 +9,10 @@ export default defineConfig({
 	// (repo must be named woopxwoop.github.io). No `base`, so BASE_URL is '/'.
 	site: 'https://woopxwoop.github.io',
 	integrations: [sitemap()],
+	// Cover art on /hobbies is downloaded and resized at build time from these hosts.
+	image: {
+		domains: ['assets.hardcover.app', 's4.anilist.co'],
+	},
 	fonts: [
 		{
 			provider: fontProviders.local(),

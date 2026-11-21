@@ -6,14 +6,21 @@ import WeekList from '../components/WeekList.astro';
 import { getAniList } from '../data/anilist';
 import { getRenshuu, getRenshuuHeatmap } from '../data/renshuu';
 import { getCanvas } from '../data/canvas';
+import { getGitHub } from '../data/github';
 import { readPlanner } from '../data/planner';
-import { anilistStatus, canvasStatus, renshuuStatus } from '../data/status';
+import { anilistStatus, canvasStatus, githubStatus, renshuuStatus } from '../data/status';
 import { buildWeek } from '../data/week';
 
 // Runs at build time, sources in parallel. If any fails, the build fails (see src/data/source.ts).
-const [anilist, renshuu, canvas, heatmap] = await Promise.all([getAniList(), getRenshuu(), getCanvas(), getRenshuuHeatmap()]);
-const status = [...anilistStatus(anilist), ...renshuuStatus(renshuu), ...canvasStatus(canvas)];
-const week = buildWeek(canvas, heatmap, readPlanner());
+const [anilist, renshuu, canvas, heatmap, github] = await Promise.all([
+	getAniList(),
+	getRenshuu(),
+	getCanvas(),
+	getRenshuuHeatmap(),
+	getGitHub(),
+]);
+const status = [...anilistStatus(anilist), ...renshuuStatus(renshuu), ...githubStatus(github), ...canvasStatus(canvas)];
+const week = buildWeek({ canvas, heatmap, github, planner: readPlanner() });
 
 const socials = [
 	{ label: 'github', href: 'https://github.com/woopxwoop' },
