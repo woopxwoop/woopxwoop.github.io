@@ -1,0 +1,302 @@
+---
+// This week at a glance: Renshuu study days, then unfinished Canvas work by due date.
+// Finished work isn't shown. Read-only: everything comes from Renshuu/Canvas data.
+// Canvas done/missing is from the last `pnpm canvas:sync` (committed snapshot).
+import type { Task, TaskStatus, Week } from '../data/week';
+
+interface Props {
+	week: Week;
+}
+const { week } = Astro.props;
+const { study, syncedAt } = week;
+
+const open = week.tasks.filter((t) => t.status !== 'done');
+
+const SPOKEN: Record<TaskStatus, string> = {
+	done: 'done:',
+	missing: 'missing:',
+	overdue: 'overdue:',
+	external: 'submitted outside canvas:',
+	todo: 'to do:',
+	unsynced: 'status unknown:',
+};
+const TAG: Partial<Record<TaskStatus, string>> = { missing: 'missing', overdue: 'overdue', external: 'outside canvas', unsynced: 'not synced' };
+const when = (t: Task) => [t.isToday ? 'today' : t.dayLabel, t.time].filter(Boolean).join(' ');
+---
+
+<aside class="week" aria-labelledby="week-h">
+	<h2 id="week-h">this week</h2>
+
+	<section class="study" aria-label={`Japanese: studied ${study.count} of ${study.goal} days this week`}>
+		<span class="label" aria-hidden="true">japanese</span>
+		<ol class="days">
+			{
+				study.days.map((d) => (
+					<li
+						class:list={{ practiced: d.practiced, today: d.isToday, future: d.future }}
+						title={`${d.label}${d.isToday ? ' (today)' : ''}: ${d.practiced ? 'studied' : d.future ? 'upcoming' : 'not studied'}`}
+					>
+						<span class="sr-only">
+							{d.label}
+							{d.isToday && ' (today)'}: {d.practiced ? 'studied' : d.future ? 'upcoming' : 'not studied'}
+						</span>
+					</li>
+				))
+			}
+		</ol>
+	</section>
+
+	{
+		open.length === 0 ? (
+			<p class="empty">{week.tasks.length === 0 ? 'nothing due on canvas this week.' : 'all caught up on canvas.'}</p>
+		) : (
+			<details class="group" open>
+				<summary>
+					to do <span class="n">{open.length}</span>
+				</summary>
+				<ul class="tasks">
+					{open.map((t) => (
+							<li class={t.status}>
+								<span class:list={['check', t.status, { done: t.status === 'done' }]} aria-hidden="true" />
+								<span class="sr-only">{SPOKEN[t.status]}</span>
+								{/* Long titles are cut to one line with "…"; title= shows the full name on hover. */}
+								{t.url ? (
+									<a class="title" href={t.url} target="_blank" rel="noopener" title={t.title}>
+										{t.title}
+									</a>
+								) : (
+									<span class="title" title={t.title}>
+										{t.title}
+									</span>
+								)}
+								<span class="meta">
+									{[t.course, when(t)].filter(Boolean).join(' · ')}
+									{TAG[t.status] && <span class="tag">{TAG[t.status]}</span>}
+								</span>
+							</li>
+					))}
+				</ul>
+			</details>
+		)
+	}
+
+	<p class="updated">
+		canvas status {syncedAt ? <>synced <time datetime={syncedAt} data-relative>{syncedAt.slice(0, 10)}</time></> : 'never synced'}
+	</p>
+</aside>
+
+<script>
+	// "synced 3h ago" in the viewer's clock.
+	for (const el of document.querySelectorAll<HTMLTimeElement>('.week time[data-relative]')) {
+		const hours = Math.round((Date.now() - Date.parse(el.dateTime)) / 3_600_000);
+		el.textContent = hours < 1 ? 'just now' : hours < 48 ? `${hours}h ago` : `${Math.round(hours / 24)} days ago`;
+	}
+</script>
+
+<style>
+	.week {
+		font-size: 0.9rem;
+		line-height: 1.5;
+	}
+
+	h2 {
+		margin: 0 0 0.9rem;
+		font-size: 0.8rem;
+		font-weight: 400;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--muted);
+	}
+
+	/* Collapsible groups: native <details>, so it works without JS and with the keyboard. */
+	.group {
+		margin-top: 1.2rem;
+	}
+	summary {
+		display: flex;
+		align-items: center;
+		gap: 0.35em;
+		width: fit-content;
+		margin-bottom: 0.25rem;
+		font-size: 0.8rem;
+		color: var(--muted);
+		cursor: pointer;
+		list-style: none; /* hide the default marker... */
+		user-select: none;
+	}
+	summary::-webkit-details-marker {
+		display: none; /* ...including Safari's */
+	}
+	summary::before {
+		content: '';
+		width: 0.35em;
+		height: 0.35em;
+		border-right: 1.5px solid currentColor;
+		border-bottom: 1.5px solid currentColor;
+		transform: rotate(-45deg); /* ▸ when closed */
+		transition: transform 0.15s;
+	}
+	.group[open] > summary::before {
+		transform: rotate(45deg); /* ▾ when open */
+	}
+	summary:hover {
+		color: var(--text);
+	}
+
+	/* Expand/collapse animation. ::details-content is the box <details> shows/hides;
+	   interpolate-size lets block-size transition to/from `auto`. Browsers without
+	   either just open instantly — same as before. */
+	.group {
+		interpolate-size: allow-keywords;
+	}
+	.group::details-content {
+		block-size: 0;
+		opacity: 0;
+		overflow: clip;
+		transition:
+			block-size 0.25s ease,
+			opacity 0.2s ease,
+			content-visibility 0.25s allow-discrete; /* keep content visible until the collapse finishes */
+	}
+	.group[open]::details-content {
+		block-size: auto;
+		opacity: 1;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		summary::before,
+		.group::details-content {
+			transition: none;
+		}
+	}
+	.n {
+		margin-left: 0.3em;
+		font-variant-numeric: tabular-nums;
+		opacity: 0.7;
+	}
+
+	/* ---------- Study goal: one line, a square per day ---------- */
+	.study {
+		display: flex;
+		align-items: center;
+		gap: 0.7rem;
+	}
+	/* Same small muted style as the "to do"/"done" headings, so it reads as a label, not content. */
+	.label {
+		font-size: 0.8rem;
+		color: var(--muted);
+	}
+	.days {
+		display: flex;
+		gap: 3px;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.days li {
+		position: relative; /* anchors .sr-only */
+		width: 0.7rem;
+		height: 0.7rem;
+		border: 1.5px solid var(--line);
+		border-radius: 2px;
+	}
+	.days .practiced {
+		border-color: var(--accent);
+		background: var(--accent);
+	}
+	.days .future {
+		border-style: dashed;
+	}
+	/* Today: a ring around its square instead of a label. */
+	.days .today {
+		outline: 1.5px solid var(--muted);
+		outline-offset: 1.5px;
+	}
+	.check {
+		flex-shrink: 0;
+		width: 0.85em;
+		height: 0.85em;
+		border: 1.5px solid var(--muted);
+		border-radius: 3px;
+	}
+	.check.done {
+		border-color: var(--accent);
+		background: var(--accent);
+	}
+
+	/* ---------- Tasks ---------- */
+	.tasks {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.tasks li {
+		position: relative; /* anchors .sr-only */
+		display: grid;
+		grid-template-columns: auto minmax(0, 1fr); /* minmax(0, …) lets the title shrink for the ellipsis */
+		column-gap: 0.6rem;
+		padding: 0.2rem 0;
+		line-height: 1.35;
+	}
+	.tasks .check {
+		grid-row: span 2;
+		align-self: start;
+		margin-top: 0.35em;
+	}
+	.title {
+		justify-self: start; /* link hit-area = the text, not the whole row */
+		max-width: 100%;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+	a.title {
+		text-decoration: none;
+	}
+	a.title:hover {
+		text-decoration: underline;
+	}
+	.meta {
+		font-size: 0.8rem;
+		color: var(--muted);
+	}
+	.tasks .check.missing,
+	.tasks .check.overdue {
+		border-color: var(--accent);
+	}
+	.tasks .check.unsynced,
+	.tasks .check.external {
+		border-style: dashed;
+	}
+	.tag {
+		margin-left: 0.5em;
+		color: var(--accent);
+	}
+	/* Not a problem, just unknown: muted, not accent. */
+	.unsynced .tag,
+	.external .tag {
+		color: var(--muted);
+		font-style: italic;
+	}
+	.done .title {
+		color: var(--muted);
+		text-decoration: line-through;
+		text-decoration-color: var(--line);
+	}
+
+	.empty,
+	.updated {
+		margin: 1.25rem 0 0;
+		color: var(--muted);
+		font-size: 0.8rem;
+	}
+
+	.sr-only {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip-path: inset(50%);
+		white-space: nowrap;
+	}
+</style>

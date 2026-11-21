@@ -1,5 +1,5 @@
 {
-	"fetchedAt": "2026-11-21T15:12:04.879Z",
+	"fetchedAt": "2026-11-21T16:36:09.685Z",
 	"data": {
 		"user": {
 			"name": "GaryFlipsTables",
@@ -16,59 +16,97 @@
 		"recent": [
 			{
 				"status": "COMPLETED",
-				"progress": 16,
-				"updatedAt": 1767136462,
+				"progress": 11,
+				"updatedAt": 1795276844,
 				"media": {
 					"title": {
-						"romaji": "Re:Zero kara Hajimeru Isekai Seikatsu 3rd Season",
-						"english": "Re:ZERO -Starting Life in Another World- Season 3"
+						"romaji": "Mushoku Tensei: Isekai Ittara Honki Dasu",
+						"english": "Mushoku Tensei: Jobless Reincarnation"
+					},
+					"episodes": 11,
+					"siteUrl": "https://anilist.co/anime/108465"
+				}
+			},
+			{
+				"status": "COMPLETED",
+				"progress": 12,
+				"updatedAt": 1795276823,
+				"media": {
+					"title": {
+						"romaji": "Mushoku Tensei: Isekai Ittara Honki Dasu Part 2",
+						"english": "Mushoku Tensei: Jobless Reincarnation Cour 2"
+					},
+					"episodes": 12,
+					"siteUrl": "https://anilist.co/anime/127720"
+				}
+			},
+			{
+				"status": "COMPLETED",
+				"progress": 16,
+				"updatedAt": 1795276814,
+				"media": {
+					"title": {
+						"romaji": "Shingeki no Kyojin: The Final Season",
+						"english": "Attack on Titan Final Season"
 					},
 					"episodes": 16,
-					"siteUrl": "https://anilist.co/anime/163134"
-				}
-			},
-			{
-				"status": "COMPLETED",
-				"progress": 24,
-				"updatedAt": 1767136407,
-				"media": {
-					"title": {
-						"romaji": "Blue Lock",
-						"english": "BLUE LOCK"
-					},
-					"episodes": 24,
-					"siteUrl": "https://anilist.co/anime/137822"
-				}
-			},
-			{
-				"status": "COMPLETED",
-				"progress": 26,
-				"updatedAt": 1767136157,
-				"media": {
-					"title": {
-						"romaji": "Shin Seiki Evangelion",
-						"english": "Neon Genesis Evangelion"
-					},
-					"episodes": 26,
-					"siteUrl": "https://anilist.co/anime/30"
+					"siteUrl": "https://anilist.co/anime/110277"
 				}
 			}
 		],
+		"featured": {
+			"status": "CURRENT",
+			"progress": 1198,
+			"media": {
+				"title": {
+					"romaji": "ONE PIECE",
+					"english": "One Piece"
+				},
+				"chapters": null,
+				"siteUrl": "https://anilist.co/manga/30013"
+			}
+		},
 		"manga": {
-			"series": 1,
-			"chaptersRead": 1170,
+			"series": 16,
+			"chaptersRead": 2262,
 			"recent": [
 				{
 					"status": "CURRENT",
-					"progress": 1170,
-					"updatedAt": 1767136228,
+					"progress": 0,
+					"updatedAt": 1795277548,
 					"media": {
 						"title": {
-							"romaji": "ONE PIECE",
-							"english": "One Piece"
+							"romaji": "Pick Me Up!",
+							"english": "Pick Me Up"
 						},
 						"chapters": null,
-						"siteUrl": "https://anilist.co/manga/30013"
+						"siteUrl": "https://anilist.co/manga/159441"
+					}
+				},
+				{
+					"status": "COMPLETED",
+					"progress": 272,
+					"updatedAt": 1795277460,
+					"media": {
+						"title": {
+							"romaji": "Jujutsu Kaisen",
+							"english": "Jujutsu Kaisen"
+						},
+						"chapters": 272,
+						"siteUrl": "https://anilist.co/manga/101517"
+					}
+				},
+				{
+					"status": "CURRENT",
+					"progress": 0,
+					"updatedAt": 1795277440,
+					"media": {
+						"title": {
+							"romaji": "Mabeop Hakgyo Apjeommyeol Cheonjae-ga Doeeotda",
+							"english": "Blink Master of the Magic Academy"
+						},
+						"chapters": null,
+						"siteUrl": "https://anilist.co/manga/178379"
 					}
 				}
 			]

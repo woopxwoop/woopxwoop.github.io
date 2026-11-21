@@ -15,6 +15,10 @@ const timeFmt = new Intl.DateTimeFormat('en-US', { timeZone: TIMEZONE, hour: 'nu
 /** The calendar day an instant falls on, in TIMEZONE. */
 export const dayOf = (instant: Date): Day => dayFmt.format(instant); // en-CA formats as YYYY-MM-DD
 
+const clockFmt = new Intl.DateTimeFormat('en-GB', { timeZone: TIMEZONE, hour: '2-digit', minute: '2-digit', hourCycle: 'h23' });
+/** "23:59" in TIMEZONE: sortable alongside a Day. */
+export const clockOf = (instant: Date) => clockFmt.format(instant);
+
 /** "11:59 pm" in TIMEZONE. */
 export const timeOf = (instant: Date) => timeFmt.format(instant).toLowerCase();
 
@@ -31,4 +35,6 @@ export function weekOf(day: Day): Day[] {
 const WEEKDAYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 /** "mon 11/24" */
 export const labelOf = (day: Day) => `${WEEKDAYS[weekdayOf(day)]} ${Number(day.slice(5, 7))}/${Number(day.slice(8, 10))}`;
-export const shortWeekday = (day: Day) => WEEKDAYS[weekdayOf(day)];
+/** "11/24" */
+export const dateOf = (day: Day) => `${Number(day.slice(5, 7))}/${Number(day.slice(8, 10))}`;
+export const shortWeekday =(day: Day) => WEEKDAYS[weekdayOf(day)];

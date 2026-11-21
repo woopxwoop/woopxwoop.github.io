@@ -30,34 +30,9 @@ function latestItem(
 	return { label: 'added', text: title, href };
 }
 
-export function anilistStatus({ user, recent, manga }: AniList): StatusItem[] {
-	const { count, episodesWatched, minutesWatched } = user.statistics.anime;
-	const items: StatusItem[] = [
-		{
-			label: 'anime',
-			text: `${fmt(count)} shows · ${fmt(episodesWatched)} episodes · ${Math.round(minutesWatched / 1440)} days`,
-			href: user.siteUrl,
-		},
-	];
-
-	if (recent[0]) {
-		items.push(latestItem(recent[0], { active: 'watching', unit: 'ep', total: recent[0].media.episodes }));
-	}
-
-	// With a single series the totals line would just repeat the "reading" line.
-	if (manga.series > 1) {
-		items.push({
-			label: 'manga',
-			text: `${fmt(manga.series)} series · ${fmt(manga.chaptersRead)} chapters`,
-			href: user.siteUrl,
-		});
-	}
-
-	if (manga.recent[0]) {
-		items.push(latestItem(manga.recent[0], { active: 'reading', unit: 'ch', total: manga.recent[0].media.chapters }));
-	}
-
-	return items;
+/** Just the featured manga (One Piece): "reading · One Piece · ch 1,198". */
+export function anilistStatus({ featured }: AniList): StatusItem[] {
+	return [latestItem(featured, { active: 'reading', unit: 'ch', total: featured.media.chapters })];
 }
 
 /** The JLPT level you're currently working through: first one (N5 → N1) not at 100%. */

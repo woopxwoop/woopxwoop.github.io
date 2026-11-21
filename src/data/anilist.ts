@@ -3,9 +3,12 @@ import { z } from 'astro/zod';
 import { defineSource, fetchJson } from './source';
 
 const USERNAME = 'GaryFlipsTables';
+// AniList media id of the manga shown on the home page (One Piece: anilist.co/manga/30013).
+// It must be on your list: AniList errors (and the build fails loudly) if it isn't.
+const FEATURED_MANGA_ID = 30013;
 
 const QUERY = /* GraphQL */ `
-	query ($name: String) {
+	query ($name: String, $featuredId: Int) {
 		User(name: $name) {
 			name
 			siteUrl
@@ -41,6 +44,19 @@ const QUERY = /* GraphQL */ `
 					status
 					progress
 				}
+			}
+		}
+		# The one series the home page ticker shows (see FEATURED_MANGA_ID).
+		featured: MediaList(userName: $name, mediaId: $featuredId) {
+			status
+			progress
+			media {
+				title {
+					romaji
+					english
+				}
+				chapters
+				siteUrl
 			}
 		}
 		recentManga: Page(perPage: 3) {
@@ -89,6 +105,15 @@ const schema = z.object({
 			}),
 		}),
 	),
+	featured: z.object({
+		status: listStatus,
+		progress: z.number().nullable(),
+		media: z.object({
+			title,
+			chapters: z.number().nullable(), // null while still ongoing
+			siteUrl: z.string().url(),
+		}),
+	}),
 	manga: z.object({
 		series: z.number(), // entries that aren't just "planning"
 		chaptersRead: z.number(),
@@ -115,10 +140,11 @@ export const getAniList = defineSource('anilist', schema, async () => {
 	const res = (await fetchJson('https://graphql.anilist.co', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-		body: JSON.stringify({ query: QUERY, variables: { name: USERNAME } }),
+		body: JSON.stringify({ query: QUERY, variables: { name: USERNAME, featuredId: FEATURED_MANGA_ID } }),
 	})) as {
 		data?: {
 			User: unknown;
+			featured: unknown;
 			recent: { mediaList: unknown };
 			mangaLists: { lists: { entries: RawEntry[] }[] } | null;
 			recentManga: { mediaList: unknown };
@@ -136,6 +162,7 @@ export const getAniList = defineSource('anilist', schema, async () => {
 	return {
 		user: d?.User,
 		recent: d?.recent.mediaList,
+		featured: d?.featured,
 		manga: {
 			series: started.length,
 			chaptersRead: started.reduce((sum, e) => sum + (e.progress ?? 0), 0),

@@ -1,7 +1,6 @@
 ---
 import { Font } from 'astro:assets';
 import '../styles/site.css';
-import DevThemeSelector from '../components/DevThemeSelector.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import { DEFAULT_THEME, STORAGE_KEY, THEMES } from '../themes';
 import { url } from '../consts';
@@ -12,7 +11,7 @@ interface Props {
 }
 
 const { title, description = 'Personal website' } = Astro.props;
-const themeIds = Object.keys(THEMES);
+const schemes = Object.fromEntries(Object.entries(THEMES).map(([id, t]) => [id, t.scheme]));
 ---
 
 <!doctype html>
@@ -26,21 +25,21 @@ const themeIds = Object.keys(THEMES);
 		<Font cssVariable="--font-atkinson" preload />
 
 		<!-- Runs before first paint so the page never flashes the wrong theme. -->
-		<script is:inline define:vars={{ STORAGE_KEY, DEFAULT_THEME, themeIds }}>
+		<script is:inline define:vars={{ STORAGE_KEY, DEFAULT_THEME, schemes }}>
 			let id = null;
 			try {
 				id = localStorage.getItem(STORAGE_KEY);
 			} catch {}
-			if (!themeIds.includes(id)) {
+			if (!(id in schemes)) {
 				id = matchMedia('(prefers-color-scheme: dark)').matches ? DEFAULT_THEME.dark : DEFAULT_THEME.light;
 			}
 			document.documentElement.dataset.theme = id;
+			document.documentElement.dataset.scheme = schemes[id];
 		</script>
 	</head>
 	<body>
 		<SiteHeader />
 		<slot />
-		{import.meta.env.DEV && <DevThemeSelector />}
 
 		<script>
 			import { watchOsTheme } from '../themes';

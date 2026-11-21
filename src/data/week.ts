@@ -1,8 +1,8 @@
-// Combines Canvas + Renshuu into the weekly checklist shown on /week.
+// Combines Canvas + Renshuu into the weekly list on the home page (components/WeekList.astro).
 import type { Canvas, CanvasEvent } from './canvas';
 import type { Planner, PlannerItem } from './planner';
 import { heatmapByDay, type HeatValue, type RenshuuHeatmap } from './renshuu';
-import { addDays, dayOf, labelOf, shortWeekday, timeOf, weekOf, type Day } from './time';
+import { addDays, clockOf, dateOf, dayOf, shortWeekday, timeOf, weekOf, type Day } from './time';
 
 export const STUDY_GOAL = 5; // days per week
 const LOOKAHEAD_DAYS = 7; // show assignments due up to a week from today
@@ -12,6 +12,9 @@ export interface Task {
 	title: string;
 	course: string | null;
 	url: string | null;
+	day: Day;
+	dayLabel: string; // "11/24"
+	isToday: boolean;
 	time: string | null; // "7:00 pm"; null only if unknown
 	past: boolean; // due time already passed at build time
 	status: TaskStatus;
@@ -64,7 +67,7 @@ function statusOf(event: CanvasEvent, item: PlannerItem | undefined, past: boole
 export interface Week {
 	today: Day;
 	syncedAt: string | null; // last `pnpm canvas:sync`
-	agenda: { day: Day; label: string; isToday: boolean; tasks: Task[] }[];
+	tasks: Task[]; // unfinished first, then by due date
 	study: { days: { day: Day; label: string; isToday: boolean; future: boolean; practiced: boolean }[]; count: number; goal: number };
 }
 
@@ -83,29 +86,32 @@ export function buildWeek(canvas: Canvas, heatmap: RenshuuHeatmap, planner: Plan
 	const synced = new Map(planner?.items.map((i) => [i.id, i]));
 	const submittingTools = coursesWithSubmittingTools(canvas.events, synced);
 
-	// Agenda: from the start of this week (so finished items stay visible) to a week out.
-	const byDay = new Map<Day, Task[]>();
+	// From the start of this week (so finished items stay visible) to a week out.
+	const tasks: (Task & { sortKey: string })[] = [];
 	for (const e of canvas.events) {
 		const instant = e.allDay ? null : new Date(e.due);
 		const day = instant ? dayOf(instant) : e.due;
 		if (day < week[0] || day > last) continue;
-		const tasks = byDay.get(day) ?? byDay.set(day, []).get(day)!;
 		const past = instant ? instant < now : day < today;
 		tasks.push({
 			id: e.id,
 			title: e.title,
 			course: e.course,
 			url: e.url,
+			day,
+			dayLabel: dateOf(day),
+			isToday: day === today,
 			// Canvas exports assignments due at 11:59 pm as all-day events (date only, no time).
 			// "past" for those is day < today, i.e. after 11:59 pm, so it already agrees.
 			time: instant ? timeOf(instant) : e.kind === 'assignment' ? '11:59 pm' : null,
 			past,
 			status: statusOf(e, synced.get(e.id), past, submittingTools),
+			sortKey: `${day} ${instant ? clockOf(instant) : '23:59'}`, // local day + 24h clock: sorts as a string
 		});
 	}
-	const agenda = [...byDay.entries()]
-		.sort(([a], [b]) => a.localeCompare(b))
-		.map(([day, tasks]) => ({ day, label: labelOf(day), isToday: day === today, tasks }));
+	// Unfinished first (anything not "done", including unknown), then by due date within each group.
+	const unfinished = (t: Task) => (t.status === 'done' ? 1 : 0);
+	tasks.sort((a, b) => unfinished(a) - unfinished(b) || a.sortKey.localeCompare(b.sortKey));
 
 	const heat = heatmapByDay(heatmap);
 	const days = week.map((day) => ({
@@ -116,5 +122,5 @@ export function buildWeek(canvas: Canvas, heatmap: RenshuuHeatmap, planner: Plan
 		practiced: countsAsPracticed(heat[day]),
 	}));
 
-	return { today, syncedAt: planner?.syncedAt ?? null, agenda, study: { days, count: days.filter((d) => d.practiced).length, goal: STUDY_GOAL } };
+	return { today, syncedAt: planner?.syncedAt ?? null, tasks: tasks.map(({ sortKey, ...t }) => t), study: { days, count: days.filter((d) => d.practiced).length, goal: STUDY_GOAL } };
 }

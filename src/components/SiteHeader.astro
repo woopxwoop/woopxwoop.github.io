@@ -1,5 +1,6 @@
 ---
 import { NAV_LINKS, SITE_NAME, stripBase, url } from '../consts';
+import ThemeToggle from './ThemeToggle.astro';
 
 const path = stripBase(Astro.url.pathname).replace(/(.)\/$/, '$1');
 const isActive = (href: string) => path === href || path.startsWith(href + '/');
@@ -8,17 +9,22 @@ const isActive = (href: string) => path === href || path.startsWith(href + '/');
 <header>
 	<nav aria-label="Main">
 		<a href={url('/')} class="home" aria-label={`${SITE_NAME}, home`} aria-current={path === '/' ? 'page' : undefined}>me</a>
-		<ul>
+		<div class="end">
 			{
-				NAV_LINKS.map(({ href, label }) => (
-					<li>
-						<a href={url(href)} aria-current={isActive(href) ? 'page' : undefined}>
-							{label}
-						</a>
-					</li>
-				))
+				NAV_LINKS.length > 0 && (
+					<ul>
+						{NAV_LINKS.map(({ href, label }) => (
+							<li>
+								<a href={url(href)} aria-current={isActive(href) ? 'page' : undefined}>
+									{label}
+								</a>
+							</li>
+						))}
+					</ul>
+				)
 			}
-		</ul>
+			<ThemeToggle />
+		</div>
 	</nav>
 </header>
 
@@ -27,10 +33,16 @@ const isActive = (href: string) => path === href || path.startsWith(href + '/');
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		max-width: 38rem;
+		max-width: var(--page-width);
 		margin: 0 auto;
-		padding: 1.5rem 1.5rem 0;
+		padding: 1.5rem var(--gutter) 0;
 		font-size: 0.95rem;
+	}
+
+	.end {
+		display: flex;
+		align-items: center;
+		gap: 1.5rem;
 	}
 
 	ul {

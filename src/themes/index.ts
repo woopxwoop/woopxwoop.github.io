@@ -41,12 +41,30 @@ export function setTheme(id: ThemeId | null) {
 	} catch {
 		/* storage blocked: theme still applies for this page view */
 	}
-	document.documentElement.dataset.theme = id ?? osTheme();
+	applyTheme(id ?? osTheme());
+}
+
+/** data-theme picks the colors; data-scheme (light/dark) is for UI that only cares which. */
+function applyTheme(id: ThemeId) {
+	document.documentElement.dataset.theme = id;
+	document.documentElement.dataset.scheme = THEMES[id].scheme;
+}
+
+/** The theme currently on the page. */
+export function currentTheme(): ThemeId {
+	const id = document.documentElement.dataset.theme;
+	return isThemeId(id) ? id : osTheme();
+}
+
+/** Flip between the light and dark default themes, remembering the choice. */
+export function toggleScheme() {
+	const next = THEMES[currentTheme()].scheme === 'dark' ? 'light' : 'dark';
+	setTheme(DEFAULT_THEME[next]);
 }
 
 /** While in auto mode, follow OS light/dark changes live. */
 export function watchOsTheme() {
 	matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-		if (!getStoredTheme()) document.documentElement.dataset.theme = osTheme();
+		if (!getStoredTheme()) applyTheme(osTheme());
 	});
 }

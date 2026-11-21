@@ -25,6 +25,14 @@
 /* Optional slots (themes may override later):
    --divider : background for <hr> ornaments                    */
 
+/* ---------- Layout tokens ---------- */
+/* Header and page content share one box, so their edges always line up. */
+:root {
+	--page-width: 52rem; /* outer width, including the gutters */
+	--gutter: 1.5rem;
+	--prose-width: 38rem; /* comfortable line length for body text */
+}
+
 /* ---------- Base ---------- */
 
 *,

@@ -5,9 +5,9 @@ import { defineConfig, fontProviders } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-	// GitHub Pages project site: https://woopxwoop.github.io/portfolio/
+	// GitHub Pages *user* site, served at the root: https://woopxwoop.github.io/
+	// (repo must be named woopxwoop.github.io). No `base`, so BASE_URL is '/'.
 	site: 'https://woopxwoop.github.io',
-	base: '/portfolio',
 	integrations: [sitemap()],
 	fonts: [
 		{

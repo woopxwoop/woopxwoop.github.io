@@ -2,33 +2,40 @@
 import Site from '../layouts/Site.astro';
 import { SITE_NAME } from '../consts';
 import StatusTicker from '../components/StatusTicker.astro';
+import WeekList from '../components/WeekList.astro';
 import { getAniList } from '../data/anilist';
-import { getRenshuu } from '../data/renshuu';
+import { getRenshuu, getRenshuuHeatmap } from '../data/renshuu';
 import { getCanvas } from '../data/canvas';
+import { readPlanner } from '../data/planner';
 import { anilistStatus, canvasStatus, renshuuStatus } from '../data/status';
+import { buildWeek } from '../data/week';
 
 // Runs at build time, sources in parallel. If any fails, the build fails (see src/data/source.ts).
-const [anilist, renshuu, canvas] = await Promise.all([getAniList(), getRenshuu(), getCanvas()]);
+const [anilist, renshuu, canvas, heatmap] = await Promise.all([getAniList(), getRenshuu(), getCanvas(), getRenshuuHeatmap()]);
 const status = [...anilistStatus(anilist), ...renshuuStatus(renshuu), ...canvasStatus(canvas)];
+const week = buildWeek(canvas, heatmap, readPlanner());
 
 const socials = [
-	{ label: 'github', href: '#' },
-	{ label: 'email', href: '#' },
+	{ label: 'github', href: 'https://github.com/woopxwoop' },
+	{ label: 'email', href: 'mailto:louan1734@gmail.com' },
 ];
 ---
 
 <Site title={SITE_NAME}>
 	<main>
-		<h1>{SITE_NAME}</h1>
-		<p class="intro">
-			third year student at the University of Wisconsin-Madison studying Computer Science and Engineering.
-		</p>
-		<ul class="socials">
-			{socials.map(({ label, href }) => <li><a href={href}>{label}</a></li>)}
-		</ul>
-		<div class="status">
-			<StatusTicker items={status} />
+		<div class="hero">
+			<h1>{SITE_NAME}</h1>
+			<p class="intro">
+				third year student at the University of Wisconsin-Madison studying Computer Science and Engineering.
+			</p>
+			<ul class="socials">
+				{socials.map(({ label, href }) => <li><a href={href}>{label}</a></li>)}
+			</ul>
+			<div class="status">
+				<StatusTicker items={status} />
+			</div>
 		</div>
+		<WeekList week={week} />
 	</main>
 </Site>
 
@@ -39,10 +46,32 @@ const socials = [
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		gap: 4rem;
 		min-height: calc(100svh - 4.5rem);
-		max-width: 38rem;
+		/* Same box as the header nav (see --page-width in site.css), so the hero's left
+		   edge lines up with "me" and the list's right edge with the last nav link. */
+		max-width: var(--page-width);
 		margin: 0 auto;
-		padding: 2rem 1.5rem 12vh;
+		padding: 2rem var(--gutter) 12vh;
+	}
+	main > * {
+		max-width: var(--prose-width);
+	}
+
+	/* Wide screens: intro on the left, the week list in a right-hand column. */
+	@media (min-width: 48rem) {
+		main {
+			display: grid;
+			grid-template-columns: minmax(0, 1fr) minmax(0, 17rem); /* list capped at 17rem */
+			align-items: center;
+			column-gap: 3rem;
+		}
+		main > :global(.week) {
+			/* Long lists scroll inside the column instead of stretching the hero off-center. */
+			max-height: calc(100svh - 8rem);
+			overflow-y: auto;
+			padding-right: 0.25rem;
+		}
 	}
 
 	h1 {

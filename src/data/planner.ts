@@ -1,4 +1,5 @@
 // Canvas Planner status (submitted / missing / marked complete), synced by hand.
+// Shown in the home page's week list (components/WeekList.astro).
 //
 // UW restricts Canvas API tokens, so CI can't fetch this. Instead `pnpm canvas:sync`
 // (scripts/canvas-sync.ts) opens a browser, you sign in, and it reads your planner
