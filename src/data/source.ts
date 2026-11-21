@@ -31,19 +31,26 @@ class HttpError extends Error {
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
+type RetryOpts = { retries?: number; timeoutMs?: number };
+
 /** fetch + JSON with timeout and retry/backoff on network errors, 429 and 5xx. */
-export async function fetchJson(
+export async function fetchJson(url: string, init: RequestInit = {}, opts: RetryOpts = {}): Promise<unknown> {
+	return JSON.parse(await fetchText(url, init, opts));
+}
+
+/** fetch + body as text (e.g. an .ics feed), same timeout/retry policy as fetchJson. */
+export async function fetchText(
 	url: string,
 	init: RequestInit = {},
-	{ retries = 3, timeoutMs = 10_000 } = {},
-): Promise<unknown> {
+	{ retries = 3, timeoutMs = 10_000 }: RetryOpts = {},
+): Promise<string> {
 	let lastError: unknown;
 	for (let attempt = 0; attempt <= retries; attempt++) {
 		if (attempt > 0) await sleep(1000 * 3 ** (attempt - 1));
 		try {
 			const res = await fetch(url, { ...init, signal: AbortSignal.timeout(timeoutMs) });
 			if (!res.ok) throw new HttpError(res.status, await res.text());
-			return await res.json();
+			return await res.text();
 		} catch (err) {
 			if (err instanceof HttpError && !err.retryable) throw err; // 4xx: retrying won't help
 			lastError = err;

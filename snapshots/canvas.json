@@ -1,0 +1,1213 @@
+{
+	"fetchedAt": "2026-11-21T15:16:43.125Z",
+	"data": {
+		"events": [
+			{
+				"id": "event-assignment-3152267",
+				"title": "14.6 Homework - Gradient",
+				"course": "MATH 234",
+				"due": "2026-10-22",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152267"
+			},
+			{
+				"id": "event-assignment-3152269",
+				"title": "14.7 Homework - Max. and Min. Values",
+				"course": "MATH 234",
+				"due": "2026-10-22",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152269"
+			},
+			{
+				"id": "event-assignment-3152312",
+				"title": "Discussion Quiz 4",
+				"course": "MATH 234",
+				"due": "2026-10-22",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152312"
+			},
+			{
+				"id": "event-assignment-3112929",
+				"title": "Lab Activity 6 (E C E 203:LEC001)",
+				"course": "ECE 203",
+				"due": "2026-10-22",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/527958/assignments/3112929"
+			},
+			{
+				"id": "event-assignment-3080261",
+				"title": "A2",
+				"course": "ECE 353",
+				"due": "2026-10-22T17:20:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516350/assignments/3080261"
+			},
+			{
+				"id": "event-assignment-3132105",
+				"title": "Ex08C",
+				"course": "ECE 230",
+				"due": "2026-10-23T00:00:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3132105"
+			},
+			{
+				"id": "event-assignment-3239905",
+				"title": "HW02-Demo",
+				"course": "ECE 353",
+				"due": "2026-10-23T19:00:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516350/assignments/3239905"
+			},
+			{
+				"id": "event-assignment-3196503",
+				"title": "Homework 07",
+				"course": "ECE 230",
+				"due": "2026-10-24",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3196503"
+			},
+			{
+				"id": "event-assignment-3132103",
+				"title": "Ex08B",
+				"course": "ECE 230",
+				"due": "2026-10-24",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3132103"
+			},
+			{
+				"id": "event-assignment-3152326",
+				"title": "Module Quiz 12 - Lagrange Multip. with one const.",
+				"course": "MATH 234",
+				"due": "2026-10-25",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152326"
+			},
+			{
+				"id": "event-assignment-3152328",
+				"title": "Module Quiz 13 - Lagrange Mult. with two const.",
+				"course": "MATH 234",
+				"due": "2026-10-25",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152328"
+			},
+			{
+				"id": "event-assignment-3152337",
+				"title": "Module Quiz 15 - Polar Coordinates",
+				"course": "MATH 234",
+				"due": "2026-10-25",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152337"
+			},
+			{
+				"id": "event-assignment-3152340",
+				"title": "Module Quiz 16 - Polar Rectangles",
+				"course": "MATH 234",
+				"due": "2026-10-25",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152340"
+			},
+			{
+				"id": "event-assignment-3112876",
+				"title": "Assessment 2 Review Videos: Fourier Series and ADC",
+				"course": "ECE 203",
+				"due": "2026-10-26",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/527958/assignments/3112876"
+			},
+			{
+				"id": "event-assignment-3112955",
+				"title": "Lab Assignment 6 (E C E 203:LEC001)",
+				"course": "ECE 203",
+				"due": "2026-10-26",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/527958/assignments/3112955"
+			},
+			{
+				"id": "event-assignment-3132216",
+				"title": "VQ09",
+				"course": "ECE 230",
+				"due": "2026-10-26T04:55:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3132216"
+			},
+			{
+				"id": "event-assignment-3163557",
+				"title": "Prelab 5: Due 2:30PM Monday",
+				"course": "ECE 270",
+				"due": "2026-10-26T19:30:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516210/assignments/3163557"
+			},
+			{
+				"id": "event-assignment-3196504",
+				"title": "Homework 08",
+				"course": "ECE 230",
+				"due": "2026-10-27",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3196504"
+			},
+			{
+				"id": "event-assignment-3256434",
+				"title": "HW02-Code-Insight",
+				"course": "ECE 353",
+				"due": "2026-10-27",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516350/assignments/3256434"
+			},
+			{
+				"id": "event-assignment-3112936",
+				"title": "Period Exercise: Assessment 2 Review Exercises",
+				"course": "ECE 203",
+				"due": "2026-10-27",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/527958/assignments/3112936"
+			},
+			{
+				"id": "event-assignment-3132107",
+				"title": "Ex09A",
+				"course": "ECE 230",
+				"due": "2026-10-27T00:00:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3132107"
+			},
+			{
+				"id": "event-assignment-3242799",
+				"title": "ICE 11 - FreeRTOS Gatekeeper Tasks",
+				"course": "ECE 353",
+				"due": "2026-10-27T17:20:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516350/assignments/3242799"
+			},
+			{
+				"id": "event-assignment-3256790",
+				"title": "Practice-ADC",
+				"course": "ECE 353",
+				"due": "2026-10-28",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516350/assignments/3256790"
+			},
+			{
+				"id": "event-assignment-3132109",
+				"title": "Ex09B",
+				"course": "ECE 230",
+				"due": "2026-10-28T00:00:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3132109"
+			},
+			{
+				"id": "event-assignment-3152271",
+				"title": "14.8 Homework - Lagrange Multipliers",
+				"course": "MATH 234",
+				"due": "2026-10-29",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152271"
+			},
+			{
+				"id": "event-assignment-3152273",
+				"title": "15.1 Homework - Double Integrals Rectangles",
+				"course": "MATH 234",
+				"due": "2026-10-29",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152273"
+			},
+			{
+				"id": "event-assignment-3152314",
+				"title": "Discussion Quiz 5",
+				"course": "MATH 234",
+				"due": "2026-10-29",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152314"
+			},
+			{
+				"id": "event-assignment-3243543",
+				"title": "ICE 12 - FreeRTOS Gatekeeper ADC",
+				"course": "ECE 353",
+				"due": "2026-10-29T17:20:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516350/assignments/3243543"
+			},
+			{
+				"id": "event-assignment-3132112",
+				"title": "Ex09C",
+				"course": "ECE 230",
+				"due": "2026-10-30T00:00:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3132112"
+			},
+			{
+				"id": "event-assignment-3152332",
+				"title": "Module Quiz 14 - Changing Order of Integration",
+				"course": "MATH 234",
+				"due": "2026-11-01",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152332"
+			},
+			{
+				"id": "event-assignment-3152342",
+				"title": "Module Quiz 17 - Applications of Double Integrals",
+				"course": "MATH 234",
+				"due": "2026-11-01",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152342"
+			},
+			{
+				"id": "event-assignment-3112880",
+				"title": "Digital Signal Processing Systems",
+				"course": "ECE 203",
+				"due": "2026-11-02",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/527958/assignments/3112880"
+			},
+			{
+				"id": "event-assignment-3112902",
+				"title": "Linearity, Time Invariance and Causality",
+				"course": "ECE 203",
+				"due": "2026-11-02",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/527958/assignments/3112902"
+			},
+			{
+				"id": "event-assignment-3112914",
+				"title": "The Impulse Response",
+				"course": "ECE 203",
+				"due": "2026-11-02",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/527958/assignments/3112914"
+			},
+			{
+				"id": "event-assignment-3132217",
+				"title": "VQ10",
+				"course": "ECE 230",
+				"due": "2026-11-02T05:55:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3132217"
+			},
+			{
+				"id": "event-assignment-3196505",
+				"title": "Homework 09",
+				"course": "ECE 230",
+				"due": "2026-11-03",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3196505"
+			},
+			{
+				"id": "event-assignment-3112938",
+				"title": "Period Exercise: DSP Systems, Impulse Response, Linearity, Time Invariance and Causality (E C E 203:LEC001)",
+				"course": "ECE 203",
+				"due": "2026-11-03",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/527958/assignments/3112938"
+			},
+			{
+				"id": "event-assignment-3132114",
+				"title": "Ex10A",
+				"course": "ECE 230",
+				"due": "2026-11-03T01:00:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3132114"
+			},
+			{
+				"id": "event-assignment-3243934",
+				"title": "ICE 13 - FreeRTOS SPI EEPROM",
+				"course": "ECE 353",
+				"due": "2026-11-03T18:20:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516350/assignments/3243934"
+			},
+			{
+				"id": "event-assignment-3163551",
+				"title": "Lab 5 Drop Box Submit PDF",
+				"course": "ECE 270",
+				"due": "2026-11-04",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516210/assignments/3163551"
+			},
+			{
+				"id": "event-assignment-3132117",
+				"title": "Ex10B",
+				"course": "ECE 230",
+				"due": "2026-11-04T01:00:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3132117"
+			},
+			{
+				"id": "event-assignment-3152275",
+				"title": "15.2 Homework - General Double Integrals",
+				"course": "MATH 234",
+				"due": "2026-11-05",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152275"
+			},
+			{
+				"id": "event-assignment-3152277",
+				"title": "15.3 Homework - Polar Double Integrals",
+				"course": "MATH 234",
+				"due": "2026-11-05",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152277"
+			},
+			{
+				"id": "event-assignment-3152279",
+				"title": "15.6 Homework - Triple Integrals",
+				"course": "MATH 234",
+				"due": "2026-11-05",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152279"
+			},
+			{
+				"id": "event-assignment-3152315",
+				"title": "Discussion Quiz 6",
+				"course": "MATH 234",
+				"due": "2026-11-05",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152315"
+			},
+			{
+				"id": "event-assignment-3112968",
+				"title": "Prelab 7",
+				"course": "ECE 203",
+				"due": "2026-11-05",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/527958/assignments/3112968"
+			},
+			{
+				"id": "event-assignment-3112930",
+				"title": "Lab Activity 7 (E C E 203:LEC001)",
+				"course": "ECE 203",
+				"due": "2026-11-05",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/527958/assignments/3112930"
+			},
+			{
+				"id": "event-assignment-3245076",
+				"title": "ICE 14 - FreeRTOS I2C IO Expander",
+				"course": "ECE 353",
+				"due": "2026-11-05T18:20:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516350/assignments/3245076"
+			},
+			{
+				"id": "event-assignment-3132119",
+				"title": "Ex10C",
+				"course": "ECE 230",
+				"due": "2026-11-06T01:00:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3132119"
+			},
+			{
+				"id": "event-assignment-3152344",
+				"title": "Module Quiz 18 - Sph. Change of Var.: Jacobian",
+				"course": "MATH 234",
+				"due": "2026-11-08",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152344"
+			},
+			{
+				"id": "event-assignment-3152346",
+				"title": "Module Quiz 19 - Change of Variables",
+				"course": "MATH 234",
+				"due": "2026-11-08",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152346"
+			},
+			{
+				"id": "event-assignment-3112885",
+				"title": "Example of Graphical Evaluation of Discrete-Time Convolution (no quiz)",
+				"course": "ECE 203",
+				"due": "2026-11-09",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/527958/assignments/3112885"
+			},
+			{
+				"id": "event-assignment-3112894",
+				"title": "Graphical Evaluation of Discrete-Time Convolution",
+				"course": "ECE 203",
+				"due": "2026-11-09",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/527958/assignments/3112894"
+			},
+			{
+				"id": "event-assignment-3112915",
+				"title": "The Impulse Response and Convolution",
+				"course": "ECE 203",
+				"due": "2026-11-09",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/527958/assignments/3112915"
+			},
+			{
+				"id": "event-assignment-3132218",
+				"title": "VQ11",
+				"course": "ECE 230",
+				"due": "2026-11-09T05:55:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3132218"
+			},
+			{
+				"id": "event-assignment-3132050",
+				"title": "Complex Arithmetic Pretest",
+				"course": "ECE 230",
+				"due": "2026-11-09T19:00:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3132050"
+			},
+			{
+				"id": "event-assignment-3163558",
+				"title": "Prelab 6: Due 2:30PM Monday",
+				"course": "ECE 270",
+				"due": "2026-11-09T20:30:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516210/assignments/3163558"
+			},
+			{
+				"id": "event-assignment-3196506",
+				"title": "Homework 10",
+				"course": "ECE 230",
+				"due": "2026-11-10",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3196506"
+			},
+			{
+				"id": "event-assignment-3112944",
+				"title": "Period Exercise: Impulse Response and Convolution, Graphical Convolution (E C E 203:LEC001)",
+				"course": "ECE 203",
+				"due": "2026-11-10",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/527958/assignments/3112944"
+			},
+			{
+				"id": "event-assignment-3132123",
+				"title": "Ex11A",
+				"course": "ECE 230",
+				"due": "2026-11-10T01:00:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3132123"
+			},
+			{
+				"id": "event-assignment-3245582",
+				"title": "ICE 15 - FreeRTOS I2C Gatekeepers",
+				"course": "ECE 353",
+				"due": "2026-11-10T18:20:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516350/assignments/3245582"
+			},
+			{
+				"id": "event-assignment-3112853",
+				"title": "Prelab 8",
+				"course": "ECE 203",
+				"due": "2026-11-11",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/527958/assignments/3112853"
+			},
+			{
+				"id": "event-assignment-3112956",
+				"title": "Lab Assignment 7 (E C E 203:LEC001)",
+				"course": "ECE 203",
+				"due": "2026-11-11",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/527958/assignments/3112956"
+			},
+			{
+				"id": "event-assignment-3132125",
+				"title": "Ex11B",
+				"course": "ECE 230",
+				"due": "2026-11-11T01:00:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3132125"
+			},
+			{
+				"id": "event-assignment-3152282",
+				"title": "15.7 Homework - Cylindrical Triple Integrals",
+				"course": "MATH 234",
+				"due": "2026-11-12",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152282"
+			},
+			{
+				"id": "event-assignment-3152283",
+				"title": "15.8 Homework - Spherical Triple Integrals",
+				"course": "MATH 234",
+				"due": "2026-11-12",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152283"
+			},
+			{
+				"id": "event-assignment-3112931",
+				"title": "Lab Activity 8 (E C E 203:LEC001)",
+				"course": "ECE 203",
+				"due": "2026-11-12",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/527958/assignments/3112931"
+			},
+			{
+				"id": "event-assignment-3261339",
+				"title": "Exam 2",
+				"course": "MATH 234",
+				"due": "2026-11-12T01:40:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3261339"
+			},
+			{
+				"id": "event-calendar-event-1081529",
+				"title": "Math 234 Exam",
+				"course": null,
+				"due": "2026-11-12T01:40:00Z",
+				"allDay": false,
+				"kind": "event",
+				"url": "https://canvas.wisc.edu/calendar?include_contexts=user_561002&month=11&year=2026#calendar_event_1081529"
+			},
+			{
+				"id": "event-assignment-3132127",
+				"title": "Ex11C",
+				"course": "ECE 230",
+				"due": "2026-11-13T01:00:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3132127"
+			},
+			{
+				"id": "event-assignment-3152350",
+				"title": "Module Quiz 20: Line Integrals Solved Examples",
+				"course": "MATH 234",
+				"due": "2026-11-15",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152350"
+			},
+			{
+				"id": "event-assignment-3152353",
+				"title": "Module Quiz 21 - Green's Theorem",
+				"course": "MATH 234",
+				"due": "2026-11-15",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152353"
+			},
+			{
+				"id": "event-assignment-3163552",
+				"title": "Lab 6 Drop Box Submit PDF",
+				"course": "ECE 270",
+				"due": "2026-11-15",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516210/assignments/3163552"
+			},
+			{
+				"id": "event-assignment-3112957",
+				"title": "Lab Assignment 8",
+				"course": "ECE 203",
+				"due": "2026-11-16",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/527958/assignments/3112957"
+			},
+			{
+				"id": "event-assignment-3132220",
+				"title": "VQ12",
+				"course": "ECE 230",
+				"due": "2026-11-16T05:55:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3132220"
+			},
+			{
+				"id": "event-assignment-3261290",
+				"title": "Period Exercise: Assessment 3 Review Exercises",
+				"course": "ECE 203",
+				"due": "2026-11-17",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/527958/assignments/3261290"
+			},
+			{
+				"id": "event-assignment-3132129",
+				"title": "Ex12A",
+				"course": "ECE 230",
+				"due": "2026-11-17T01:00:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3132129"
+			},
+			{
+				"id": "event-assignment-3263367",
+				"title": "HW03-Code-Insight",
+				"course": "ECE 353",
+				"due": "2026-11-17T17:20:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516350/assignments/3263367"
+			},
+			{
+				"id": "event-assignment-3132157",
+				"title": "Exam 2",
+				"course": "ECE 230",
+				"due": "2026-11-18T01:25:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3132157"
+			},
+			{
+				"id": "event-assignment-3152286",
+				"title": "15.9 Homework - Change of Variables",
+				"course": "MATH 234",
+				"due": "2026-11-19",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152286"
+			},
+			{
+				"id": "event-assignment-3152288",
+				"title": "16.1 Homework - Vector Fields",
+				"course": "MATH 234",
+				"due": "2026-11-19",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152288"
+			},
+			{
+				"id": "event-assignment-3152290",
+				"title": "16.2 Homework - Line Integrals",
+				"course": "MATH 234",
+				"due": "2026-11-19",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152290"
+			},
+			{
+				"id": "event-assignment-3080263",
+				"title": "A3",
+				"course": "ECE 353",
+				"due": "2026-11-19T18:20:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516350/assignments/3080263"
+			},
+			{
+				"id": "event-assignment-3132133",
+				"title": "Ex12C",
+				"course": "ECE 230",
+				"due": "2026-11-20T01:00:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3132133"
+			},
+			{
+				"id": "event-assignment-3132221",
+				"title": "VQ13",
+				"course": "ECE 230",
+				"due": "2026-11-23T05:55:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3132221"
+			},
+			{
+				"id": "event-assignment-3196508",
+				"title": "Homework 12",
+				"course": "ECE 230",
+				"due": "2026-11-24",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3196508"
+			},
+			{
+				"id": "event-assignment-3080298",
+				"title": "Quiz-SPI",
+				"course": "ECE 353",
+				"due": "2026-11-24",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516350/assignments/3080298"
+			},
+			{
+				"id": "event-assignment-3132135",
+				"title": "Ex13A",
+				"course": "ECE 230",
+				"due": "2026-11-24T01:00:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3132135"
+			},
+			{
+				"id": "event-assignment-3132137",
+				"title": "Ex13B",
+				"course": "ECE 230",
+				"due": "2026-11-25T01:00:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3132137"
+			},
+			{
+				"id": "event-assignment-3196507",
+				"title": "Homework 11",
+				"course": "ECE 230",
+				"due": "2026-11-28",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3196507"
+			},
+			{
+				"id": "event-assignment-3132131",
+				"title": "Ex12B",
+				"course": "ECE 230",
+				"due": "2026-11-28",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3132131"
+			},
+			{
+				"id": "event-assignment-3152292",
+				"title": "16.3 Homework - FTC Line Integrals",
+				"course": "MATH 234",
+				"due": "2026-11-29",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152292"
+			},
+			{
+				"id": "event-assignment-3152294",
+				"title": "16.4 Homework - Green's Theorem",
+				"course": "MATH 234",
+				"due": "2026-11-29",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152294"
+			},
+			{
+				"id": "event-assignment-3132139",
+				"title": "Ex13C",
+				"course": "ECE 230",
+				"due": "2026-11-29",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3132139"
+			},
+			{
+				"id": "event-assignment-3132222",
+				"title": "VQ14",
+				"course": "ECE 230",
+				"due": "2026-11-30T05:55:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3132222"
+			},
+			{
+				"id": "event-assignment-3196509",
+				"title": "Homework 13",
+				"course": "ECE 230",
+				"due": "2026-12-01",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3196509"
+			},
+			{
+				"id": "event-assignment-3132142",
+				"title": "Ex14A",
+				"course": "ECE 230",
+				"due": "2026-12-01T01:00:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3132142"
+			},
+			{
+				"id": "event-assignment-3132144",
+				"title": "Ex14B",
+				"course": "ECE 230",
+				"due": "2026-12-02T01:00:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3132144"
+			},
+			{
+				"id": "event-assignment-3152296",
+				"title": "16.5 Homework - Curl and Divergence",
+				"course": "MATH 234",
+				"due": "2026-12-03",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152296"
+			},
+			{
+				"id": "event-assignment-3152298",
+				"title": "16.6 Homework - Parametric Surfaces",
+				"course": "MATH 234",
+				"due": "2026-12-03",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152298"
+			},
+			{
+				"id": "event-assignment-3152316",
+				"title": "Discussion Quiz 7",
+				"course": "MATH 234",
+				"due": "2026-12-03",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152316"
+			},
+			{
+				"id": "event-assignment-3132146",
+				"title": "Ex14C",
+				"course": "ECE 230",
+				"due": "2026-12-04T01:00:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3132146"
+			},
+			{
+				"id": "event-assignment-3163546",
+				"title": "A Paper bench exam will be given during the last week of class time.",
+				"course": "ECE 270",
+				"due": "2026-12-04T21:30:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516210/assignments/3163546"
+			},
+			{
+				"id": "event-assignment-3152355",
+				"title": "Module Quiz 22 - Surface Integrals",
+				"course": "MATH 234",
+				"due": "2026-12-06",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152355"
+			},
+			{
+				"id": "event-assignment-3152357",
+				"title": "Module Quiz 23 - Stoke's Theorem",
+				"course": "MATH 234",
+				"due": "2026-12-06",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152357"
+			},
+			{
+				"id": "event-assignment-3132223",
+				"title": "VQ15",
+				"course": "ECE 230",
+				"due": "2026-12-07T05:55:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3132223"
+			},
+			{
+				"id": "event-assignment-3196510",
+				"title": "Homework 14",
+				"course": "ECE 230",
+				"due": "2026-12-08",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3196510"
+			},
+			{
+				"id": "event-assignment-3132148",
+				"title": "Ex15A",
+				"course": "ECE 230",
+				"due": "2026-12-08T01:00:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3132148"
+			},
+			{
+				"id": "event-assignment-3132150",
+				"title": "Ex15B",
+				"course": "ECE 230",
+				"due": "2026-12-09T01:00:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3132150"
+			},
+			{
+				"id": "event-assignment-3152300",
+				"title": "16.7 Homework - Surface Integrals",
+				"course": "MATH 234",
+				"due": "2026-12-10",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152300"
+			},
+			{
+				"id": "event-assignment-3152302",
+				"title": "16.8 Homework - Stokes' Theorem",
+				"course": "MATH 234",
+				"due": "2026-12-10",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152302"
+			},
+			{
+				"id": "event-assignment-3152304",
+				"title": "16.9 Homework - Divergence Theorem",
+				"course": "MATH 234",
+				"due": "2026-12-10",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152304"
+			},
+			{
+				"id": "event-assignment-3152359",
+				"title": "Module Quiz 24 - Stoke's Theorem Examples",
+				"course": "MATH 234",
+				"due": "2026-12-10",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152359"
+			},
+			{
+				"id": "event-assignment-3152362",
+				"title": "Module Quiz 25 - Consequences of Green's Theorem",
+				"course": "MATH 234",
+				"due": "2026-12-10",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152362"
+			},
+			{
+				"id": "event-assignment-3152365",
+				"title": "Module Quiz 26 - Divergence Theorem examples",
+				"course": "MATH 234",
+				"due": "2026-12-10",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152365"
+			},
+			{
+				"id": "event-assignment-3132152",
+				"title": "Ex15C",
+				"course": "ECE 230",
+				"due": "2026-12-11T01:00:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3132152"
+			},
+			{
+				"id": "event-assignment-3132159",
+				"title": "Final Exam",
+				"course": "ECE 230",
+				"due": "2026-12-11T23:10:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3132159"
+			},
+			{
+				"id": "event-assignment-3196511",
+				"title": "Homework 15",
+				"course": "ECE 230",
+				"due": "2026-12-15",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3196511"
+			},
+			{
+				"id": "event-assignment-3196512",
+				"title": "Practice 02",
+				"course": "ECE 230",
+				"due": "2026-12-17",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3196512"
+			},
+			{
+				"id": "event-assignment-3196513",
+				"title": "Practice 03",
+				"course": "ECE 230",
+				"due": "2026-12-17",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3196513"
+			},
+			{
+				"id": "event-assignment-3196514",
+				"title": "Practice 04",
+				"course": "ECE 230",
+				"due": "2026-12-17",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3196514"
+			},
+			{
+				"id": "event-assignment-3196515",
+				"title": "Practice 05",
+				"course": "ECE 230",
+				"due": "2026-12-17",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3196515"
+			},
+			{
+				"id": "event-assignment-3196516",
+				"title": "Practice 06",
+				"course": "ECE 230",
+				"due": "2026-12-17",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3196516"
+			},
+			{
+				"id": "event-assignment-3196517",
+				"title": "Practice 07",
+				"course": "ECE 230",
+				"due": "2026-12-17",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3196517"
+			},
+			{
+				"id": "event-assignment-3196518",
+				"title": "Practice 08",
+				"course": "ECE 230",
+				"due": "2026-12-17",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3196518"
+			},
+			{
+				"id": "event-assignment-3196519",
+				"title": "Practice 09",
+				"course": "ECE 230",
+				"due": "2026-12-17",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3196519"
+			},
+			{
+				"id": "event-assignment-3196520",
+				"title": "Practice 10",
+				"course": "ECE 230",
+				"due": "2026-12-17",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3196520"
+			},
+			{
+				"id": "event-assignment-3196521",
+				"title": "Practice 11",
+				"course": "ECE 230",
+				"due": "2026-12-17",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3196521"
+			},
+			{
+				"id": "event-assignment-3196522",
+				"title": "Practice 12",
+				"course": "ECE 230",
+				"due": "2026-12-17",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3196522"
+			},
+			{
+				"id": "event-assignment-3196523",
+				"title": "Practice 13",
+				"course": "ECE 230",
+				"due": "2026-12-17",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3196523"
+			},
+			{
+				"id": "event-assignment-3196524",
+				"title": "Practice 14",
+				"course": "ECE 230",
+				"due": "2026-12-17",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3196524"
+			},
+			{
+				"id": "event-assignment-3196525",
+				"title": "Practice 15",
+				"course": "ECE 230",
+				"due": "2026-12-17",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3196525"
+			},
+			{
+				"id": "event-assignment-3132051",
+				"title": "ECE 230 Mock Exam",
+				"course": "ECE 230",
+				"due": "2026-12-19T05:30:00Z",
+				"allDay": false,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/516197/assignments/3132051"
+			},
+			{
+				"id": "event-assignment-3152306",
+				"title": "234 - Diagnostic Quiz",
+				"course": "MATH 234",
+				"due": "2026-12-27",
+				"allDay": true,
+				"kind": "assignment",
+				"url": "https://canvas.wisc.edu/courses/518324/assignments/3152306"
+			}
+		]
+	}
+}

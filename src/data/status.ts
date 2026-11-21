@@ -1,6 +1,7 @@
 // Turns raw source data into the short lines shown in the home page status ticker.
 // This is the place to decide what you want to brag about and how it reads.
 import type { AniList } from './anilist';
+import type { Canvas } from './canvas';
 import { JLPT, type Renshuu } from './renshuu';
 
 export interface StatusItem {
@@ -82,4 +83,14 @@ export function renshuuStatus({ studied, level_progress_percs: p, streaks }: Ren
 	if (streak > 1) items.push({ label: 'streak', text: `${streak} days studying japanese` });
 
 	return items;
+}
+
+/**
+ * Canvas → ticker lines. `events` is sorted by due date (past and future), each
+ * `{ title, course, due, allDay, kind }`. `now` is the build time; the site
+ * rebuilds every 6h, so anything time-relative is at most that stale.
+ */
+export function canvasStatus({ events }: Canvas, now = new Date()): StatusItem[] {
+	// TODO: decide what the ticker shows from your coursework.
+	return [];
 }

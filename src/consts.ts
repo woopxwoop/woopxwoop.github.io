@@ -10,4 +10,5 @@ export const stripBase = (pathname: string) => pathname.slice(BASE.length) || '/
 export const NAV_LINKS = [
 	{ href: '/projects', label: 'projects' },
 	{ href: '/hobbies', label: 'hobbies' },
+	{ href: '/week', label: 'week' },
 ];

@@ -42,6 +42,7 @@ jobs:
       - run: pnpm build
         env:
           RENSHUU_API_KEY: ${{ secrets.RENSHUU_API_KEY }}
+          CANVAS_FEED_URL: ${{ secrets.CANVAS_FEED_URL }}
 
       - uses: actions/upload-pages-artifact@v3
         with:

@@ -1,0 +1,1162 @@
+{
+	"syncedAt": "2026-11-21T15:14:27.178Z",
+	"range": {
+		"start": "2026-10-31T15:14:04.798Z",
+		"end": "2027-01-16T15:14:04.798Z"
+	},
+	"items": [
+		{
+			"id": "event-assignment-3132217",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3152332",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3152342",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3132114",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3112880",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3112902",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3112914",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3243934",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"online_upload"
+			]
+		},
+		{
+			"id": "event-assignment-3132117",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3196505",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3112938",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3163551",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"online_upload"
+			]
+		},
+		{
+			"id": "event-assignment-3245076",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"online_upload"
+			]
+		},
+		{
+			"id": "event-assignment-3132119",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3152275",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3152277",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3152279",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3112930",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3112968",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3152315",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3132218",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3152344",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3152346",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3132050",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3163558",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3132123",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3112885",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"none"
+			]
+		},
+		{
+			"id": "event-assignment-3112894",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3112915",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3245582",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"online_upload"
+			]
+		},
+		{
+			"id": "event-assignment-3132125",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3196506",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3112944",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-calendar-event-1081529",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": []
+		},
+		{
+			"id": "event-assignment-3261339",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3112853",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3112956",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3132127",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3152282",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3152283",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3112931",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3132220",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3152350",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3152353",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3163552",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"online_upload"
+			]
+		},
+		{
+			"id": "event-assignment-3132129",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3112957",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3263367",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3132157",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3261290",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3080263",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3132133",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3152286",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3152288",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3152290",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3132221",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3132135",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3132137",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3080298",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3196508",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3196507",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3132131",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3132222",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3152292",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3152294",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3132139",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3132142",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3132144",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3196509",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3132146",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3152296",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3152298",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3152316",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"on_paper"
+			]
+		},
+		{
+			"id": "event-assignment-3163546",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"online_upload"
+			]
+		},
+		{
+			"id": "event-assignment-3132223",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3152355",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3152357",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3132148",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3132150",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3196510",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3132152",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3152300",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3152302",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3152304",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3152359",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3152362",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3152365",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3132159",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3196511",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3196512",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3196513",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3196514",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3196515",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3196516",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3196517",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3196518",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3196519",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3196520",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3196521",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3196522",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3196523",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3196524",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3196525",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3132051",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3152306",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		}
+	]
+}

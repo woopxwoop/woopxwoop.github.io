@@ -25,10 +25,34 @@ export type Renshuu = z.infer<typeof schema>;
 export type JlptLevel = (typeof JLPT)[number];
 export { JLPT };
 
-export const getRenshuu = defineSource('renshuu', schema, async () => {
+function renshuuGet(endpoint: string) {
 	const key = import.meta.env.RENSHUU_API_KEY ?? process.env.RENSHUU_API_KEY;
 	if (!key) throw new Error('RENSHUU_API_KEY is not set');
-	return fetchJson('https://api.renshuu.org/v1/profile', {
+	return fetchJson(`https://api.renshuu.org/v1${endpoint}`, {
 		headers: { Authorization: `Bearer ${key}`, Accept: 'application/json' },
 	});
-});
+}
+
+export const getRenshuu = defineSource('renshuu', schema, () => renshuuGet('/profile'));
+
+// /heatmap: { "Week 51": { "10/05/26": 78, "10/04/26": "scheduled holiday", ... }, ... }
+// Number = percent of that day's expected studies done (0–100).
+const heatValue = z.union([z.number(), z.literal('scheduled holiday')]);
+const heatmapSchema = z.object({ heatmap: z.record(z.string(), z.record(z.string(), heatValue)) });
+
+export type HeatValue = z.infer<typeof heatValue>;
+export type RenshuuHeatmap = z.infer<typeof heatmapSchema>;
+
+export const getRenshuuHeatmap = defineSource('renshuu-heatmap', heatmapSchema, () => renshuuGet('/heatmap'));
+
+/** Flatten the week-grouped heatmap into { "YYYY-MM-DD": value }. */
+export function heatmapByDay({ heatmap }: RenshuuHeatmap): Record<string, HeatValue> {
+	const out: Record<string, HeatValue> = {};
+	for (const days of Object.values(heatmap)) {
+		for (const [mmddyy, value] of Object.entries(days)) {
+			const [mm, dd, yy] = mmddyy.split('/');
+			out[`20${yy}-${mm}-${dd}`] = value;
+		}
+	}
+	return out;
+}

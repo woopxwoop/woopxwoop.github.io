@@ -1,0 +1,269 @@
+---
+import Site from '../layouts/Site.astro';
+import { SITE_NAME } from '../consts';
+import { getCanvas } from '../data/canvas';
+import { readPlanner } from '../data/planner';
+import { getRenshuuHeatmap } from '../data/renshuu';
+import { buildWeek, type TaskStatus } from '../data/week';
+
+// Built every 6h (see deploy.yml), so "today" and past/upcoming are as of the last build.
+// Done/missing comes from the last `pnpm canvas:sync` (committed snapshot), not this build.
+const [canvas, heatmap] = await Promise.all([getCanvas(), getRenshuuHeatmap()]);
+const { agenda, study, syncedAt } = buildWeek(canvas, heatmap, readPlanner());
+const builtAt = new Date().toISOString();
+
+const SPOKEN: Record<TaskStatus, string> = {
+	done: 'done:',
+	missing: 'missing:',
+	overdue: 'overdue:',
+	external: 'submitted outside canvas:',
+	todo: 'to do:',
+	unsynced: 'status unknown:',
+};
+const TAG: Partial<Record<TaskStatus, string>> = { missing: 'missing', overdue: 'overdue', external: 'outside canvas', unsynced: 'not synced' };
+---
+
+<Site title={`this week · ${SITE_NAME}`} description="What I'm working on this week">
+	<main>
+		<h1>this week</h1>
+
+		<section class="study" aria-labelledby="study-h">
+			<h2 id="study-h">
+				<span class:list={['check', { done: study.count >= study.goal }]} aria-hidden="true"></span>
+				study japanese
+				<span class="count">{study.count}/{study.goal} days</span>
+			</h2>
+			<ol class="dots">
+				{
+					study.days.map((d) => (
+						<li class:list={{ practiced: d.practiced, today: d.isToday, future: d.future }}>
+							<span class="dot" />
+							<span class="sr-only">{d.practiced ? 'studied' : d.future ? 'upcoming' : 'missed'}</span>
+							{d.label}
+						</li>
+					))
+				}
+			</ol>
+		</section>
+
+		{agenda.length === 0 && <p class="empty">nothing due on canvas this week.</p>}
+
+		{
+			agenda.map(({ label, isToday, tasks }) => (
+				<section class="day" aria-label={label}>
+					<h2 class:list={{ today: isToday }}>
+						{label}
+						{isToday && <span class="badge">today</span>}
+					</h2>
+					<ul class="tasks">
+						{tasks.map((t) => (
+							<li class={t.status}>
+								<span class:list={['check', t.status, { done: t.status === 'done' }]} aria-hidden="true" />
+								<span class="sr-only">{SPOKEN[t.status]}</span>
+								{t.url ? (
+									<a class="title" href={t.url} target="_blank" rel="noopener">
+										{t.title}
+									</a>
+								) : (
+									<span class="title">{t.title}</span>
+								)}
+								<span class="meta">
+									{[t.course, t.time].filter(Boolean).join(' · ')}
+									{TAG[t.status] && <span class="tag">{TAG[t.status]}</span>}								</span>
+							</li>
+						))}
+					</ul>
+				</section>
+			))
+		}
+
+		<p class="updated">
+			updated <time datetime={builtAt} data-relative>{builtAt.slice(0, 16).replace('T', ' ')} utc</time>
+			· canvas status {syncedAt ? <>synced <time datetime={syncedAt} data-relative>{syncedAt.slice(0, 10)}</time></> : 'never synced'}
+		</p>
+	</main>
+</Site>
+
+<script>
+	// "updated 3h ago" in the viewer's clock.
+	for (const el of document.querySelectorAll<HTMLTimeElement>('time[data-relative]')) {
+		const hours = Math.round((Date.now() - Date.parse(el.dateTime)) / 3_600_000);
+		el.textContent = hours < 1 ? 'just now' : hours < 48 ? `${hours}h ago` : `${Math.round(hours / 24)} days ago`;
+	}
+</script>
+
+<style>
+	main {
+		max-width: 38rem;
+		margin: 0 auto;
+		padding: 3rem 1.5rem 6rem;
+	}
+
+	h1 {
+		margin: 0 0 2rem;
+		font-size: clamp(2.2rem, 7vw, 3rem);
+		line-height: 1.05;
+		letter-spacing: -0.02em;
+	}
+
+	h2 {
+		display: flex;
+		align-items: baseline;
+		gap: 0.6em;
+		margin: 0 0 0.5rem;
+		font-size: 0.95rem;
+		font-weight: 400;
+		color: var(--muted);
+	}
+	h2.today {
+		color: var(--text);
+	}
+	.badge {
+		color: var(--accent);
+		font-size: 0.85em;
+	}
+
+	/* ---------- Study goal ---------- */
+	.study {
+		margin-bottom: 2.5rem;
+		padding: 1rem 1.1rem;
+		border: 1px solid var(--line);
+		border-radius: 10px;
+		background: var(--surface);
+	}
+	.study h2 {
+		color: var(--text);
+		font-size: 1rem;
+	}
+	.count {
+		margin-left: auto;
+		color: var(--muted);
+		font-variant-numeric: tabular-nums;
+	}
+	.check {
+		align-self: center;
+		width: 0.9em;
+		height: 0.9em;
+		border: 1.5px solid var(--muted);
+		border-radius: 3px;
+	}
+	.check.done {
+		border-color: var(--accent);
+		background: var(--accent);
+	}
+
+	.dots {
+		display: grid;
+		grid-template-columns: repeat(7, 1fr);
+		gap: 0.25rem;
+		margin: 0.75rem 0 0;
+		padding: 0;
+		list-style: none;
+		font-size: 0.75rem;
+		text-align: center;
+		color: var(--muted);
+	}
+	.dots li {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.3rem;
+	}
+	.dot {
+		width: 0.8rem;
+		height: 0.8rem;
+		border-radius: 50%;
+		border: 1.5px solid var(--line);
+	}
+	.practiced .dot {
+		border-color: var(--accent);
+		background: var(--accent);
+	}
+	.future .dot {
+		border-style: dashed;
+	}
+	.today {
+		color: var(--text);
+	}
+	.dots .today:not(.practiced) .dot {
+		border-color: var(--muted);
+	}
+
+	/* ---------- Agenda ---------- */
+	.day + .day {
+		margin-top: 1.5rem;
+	}
+	.tasks {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.tasks li {
+		position: relative; /* anchors .sr-only */
+		display: grid;
+		grid-template-columns: auto 1fr;
+		column-gap: 0.7rem;
+		padding: 0.35rem 0;
+	}
+	/* Read-only status marker (reuses .check from the study card). */
+	.tasks .check {
+		grid-row: span 2;
+		align-self: start;
+		margin-top: 0.4em;
+	}
+	.title {
+		justify-self: start; /* link hit-area = the text, not the whole row */
+		overflow-wrap: anywhere;
+	}
+	a.title {
+		text-decoration: none;
+	}
+	a.title:hover {
+		text-decoration: underline;
+	}
+	.meta {
+		font-size: 0.85rem;
+		color: var(--muted);
+	}
+	.tasks .check.missing,
+	.tasks .check.overdue {
+		border-color: var(--accent);
+	}
+	.tasks .check.unsynced,
+	.tasks .check.external {
+		border-style: dashed;
+	}
+	.tag {
+		margin-left: 0.5em;
+		color: var(--accent);
+	}
+	/* Not a problem, just unknown: muted, not accent. */
+	.unsynced .tag,
+	.external .tag {
+		color: var(--muted);
+		font-style: italic;
+	}
+	.done .title {
+		color: var(--muted);
+		text-decoration: line-through;
+		text-decoration-color: var(--line);
+	}
+
+	.empty,
+	.updated {
+		color: var(--muted);
+		font-size: 0.9rem;
+	}
+	.updated {
+		margin-top: 3rem;
+	}
+
+	.sr-only {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip-path: inset(50%);
+		white-space: nowrap;
+	}
+</style>

@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Canvas sync browser profile (holds a live Canvas session)
+.canvas-profile/

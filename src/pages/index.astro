@@ -4,11 +4,12 @@ import { SITE_NAME } from '../consts';
 import StatusTicker from '../components/StatusTicker.astro';
 import { getAniList } from '../data/anilist';
 import { getRenshuu } from '../data/renshuu';
-import { anilistStatus, renshuuStatus } from '../data/status';
+import { getCanvas } from '../data/canvas';
+import { anilistStatus, canvasStatus, renshuuStatus } from '../data/status';
 
 // Runs at build time, sources in parallel. If any fails, the build fails (see src/data/source.ts).
-const [anilist, renshuu] = await Promise.all([getAniList(), getRenshuu()]);
-const status = [...anilistStatus(anilist), ...renshuuStatus(renshuu)];
+const [anilist, renshuu, canvas] = await Promise.all([getAniList(), getRenshuu(), getCanvas()]);
+const status = [...anilistStatus(anilist), ...renshuuStatus(renshuu), ...canvasStatus(canvas)];
 
 const socials = [
 	{ label: 'github', href: '#' },
