@@ -1,8 +1,8 @@
 {
-	"syncedAt": "2026-11-21T20:44:14.484Z",
+	"syncedAt": "2026-11-22T01:42:31.603Z",
 	"range": {
-		"start": "2026-10-31T20:43:46.337Z",
-		"end": "2027-01-16T20:43:46.337Z"
+		"start": "2026-11-01T01:42:11.802Z",
+		"end": "2027-01-17T01:42:11.802Z"
 	},
 	"items": [
 		{
@@ -609,11 +609,33 @@
 			]
 		},
 		{
-			"id": "event-assignment-3132221",
-			"submitted": false,
+			"id": "event-assignment-3196507",
+			"submitted": true,
 			"missing": false,
 			"excused": false,
-			"graded": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3132131",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3132221",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
 			"markedComplete": false,
 			"submissionTypes": [
 				"external_tool"
@@ -625,6 +647,39 @@
 			"missing": false,
 			"excused": false,
 			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3112877",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
+			"markedComplete": false,
+			"submissionTypes": [
+				"external_tool"
+			]
+		},
+		{
+			"id": "event-assignment-3112887",
+			"submitted": false,
+			"missing": false,
+			"excused": false,
+			"graded": false,
+			"markedComplete": false,
+			"submissionTypes": [
+				"none"
+			]
+		},
+		{
+			"id": "event-assignment-3112893",
+			"submitted": true,
+			"missing": false,
+			"excused": false,
+			"graded": true,
 			"markedComplete": false,
 			"submissionTypes": [
 				"external_tool"
@@ -664,22 +719,11 @@
 			]
 		},
 		{
-			"id": "event-assignment-3196507",
-			"submitted": true,
+			"id": "event-assignment-3112943",
+			"submitted": false,
 			"missing": false,
 			"excused": false,
-			"graded": true,
-			"markedComplete": false,
-			"submissionTypes": [
-				"external_tool"
-			]
-		},
-		{
-			"id": "event-assignment-3132131",
-			"submitted": true,
-			"missing": false,
-			"excused": false,
-			"graded": true,
+			"graded": false,
 			"markedComplete": false,
 			"submissionTypes": [
 				"external_tool"
