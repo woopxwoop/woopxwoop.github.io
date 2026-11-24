@@ -1,87 +1,10 @@
 {
-	"syncedAt": "2026-11-22T01:42:31.603Z",
+	"syncedAt": "2026-11-24T14:46:44.347Z",
 	"range": {
-		"start": "2026-11-01T01:42:11.802Z",
-		"end": "2027-01-17T01:42:11.802Z"
+		"start": "2026-11-03T14:46:20.419Z",
+		"end": "2027-01-19T14:46:20.419Z"
 	},
 	"items": [
-		{
-			"id": "event-assignment-3132217",
-			"submitted": true,
-			"missing": false,
-			"excused": false,
-			"graded": true,
-			"markedComplete": false,
-			"submissionTypes": [
-				"external_tool"
-			]
-		},
-		{
-			"id": "event-assignment-3152332",
-			"submitted": false,
-			"missing": false,
-			"excused": false,
-			"graded": true,
-			"markedComplete": false,
-			"submissionTypes": [
-				"external_tool"
-			]
-		},
-		{
-			"id": "event-assignment-3152342",
-			"submitted": false,
-			"missing": false,
-			"excused": false,
-			"graded": true,
-			"markedComplete": false,
-			"submissionTypes": [
-				"external_tool"
-			]
-		},
-		{
-			"id": "event-assignment-3132114",
-			"submitted": true,
-			"missing": false,
-			"excused": false,
-			"graded": true,
-			"markedComplete": false,
-			"submissionTypes": [
-				"external_tool"
-			]
-		},
-		{
-			"id": "event-assignment-3112880",
-			"submitted": true,
-			"missing": false,
-			"excused": false,
-			"graded": true,
-			"markedComplete": false,
-			"submissionTypes": [
-				"external_tool"
-			]
-		},
-		{
-			"id": "event-assignment-3112902",
-			"submitted": true,
-			"missing": false,
-			"excused": false,
-			"graded": true,
-			"markedComplete": false,
-			"submissionTypes": [
-				"external_tool"
-			]
-		},
-		{
-			"id": "event-assignment-3112914",
-			"submitted": true,
-			"missing": false,
-			"excused": false,
-			"graded": true,
-			"markedComplete": false,
-			"submissionTypes": [
-				"external_tool"
-			]
-		},
 		{
 			"id": "event-assignment-3243934",
 			"submitted": true,
@@ -643,10 +566,10 @@
 		},
 		{
 			"id": "event-assignment-3132135",
-			"submitted": false,
+			"submitted": true,
 			"missing": false,
 			"excused": false,
-			"graded": false,
+			"graded": true,
 			"markedComplete": false,
 			"submissionTypes": [
 				"external_tool"
