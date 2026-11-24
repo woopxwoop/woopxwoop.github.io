@@ -1,13 +1,19 @@
-// pnpm canvas:commit — run canvas:sync, then commit its snapshots, and nothing else.
+// pnpm canvas:commit (or `node path/to/scripts/canvas-commit.ts` from anywhere) — run canvas:sync, then commit its snapshots, and nothing else.
 //
 // Guard rails, so the commit is only ever the sync:
 //   1. Before: the working tree must be clean (no staged, unstaged or untracked changes).
 //   2. After:  every changed path must be one of the Canvas snapshot files.
 // If either check fails nothing is committed. On success it pushes, which deploys.
+//
+// Works from any directory: it moves to the project root first.
 import { spawnSync } from 'node:child_process';
 import path from 'node:path';
-import { PLANNER_FILE } from '../src/data/planner.ts';
-import { COURSES_FILE } from '../src/data/canvas-courses.ts';
+
+// The snapshot paths (and canvas-sync's .canvas-profile) are path.resolve()d against the
+// cwd at import time, so chdir *before* importing them — static imports would run first.
+process.chdir(path.resolve(import.meta.dirname, '..'));
+const { PLANNER_FILE } = await import('../src/data/planner.ts');
+const { COURSES_FILE } = await import('../src/data/canvas-courses.ts');
 
 function git(...args: string[]): string {
 	const res = spawnSync('git', args, { encoding: 'utf8' });
