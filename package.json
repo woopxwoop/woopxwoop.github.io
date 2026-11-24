@@ -10,7 +10,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "canvas:sync": "node scripts/canvas-sync.ts"
+    "canvas:sync": "node scripts/canvas-sync.ts",
+    "canvas:commit": "node scripts/canvas-commit.ts"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
